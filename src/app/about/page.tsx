@@ -8,8 +8,7 @@ export default function About() {
 
       <div className="prose prose-lg max-w-none">
         <p className="text-xl text-gray-600 mb-8">
-          Welcome to Central Coast Swim, where we've been sharing the joy of swimming with our community since 2010. 
-          Our mission is to provide a safe, comfortable, and enjoyable environment for swimmers of all ages to learn and grow.
+          Welcome to Central Coast Swim. Our mission is to provide a safe, comfortable, and enjoyable environment for swimmers of all ages to learn and grow.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">

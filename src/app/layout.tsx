@@ -40,11 +40,11 @@ export default function RootLayout({
               <div>
                 <h3 className="text-xl font-bold mb-4">Contact Us</h3>
                 <p>Email: info@centralcoastswim.com</p>
-                <p>Phone: (555) 123-4567</p>
+                <p>Call Andria at: (805) 330-2184</p>
               </div>
               <div>
                 <h3 className="text-xl font-bold mb-4">Location</h3>
-                <p>Central Coast, California</p>
+                <p>San Luis Obispo, CA</p>
               </div>
               <div>
                 <h3 className="text-xl font-bold mb-4">Follow Us</h3>
