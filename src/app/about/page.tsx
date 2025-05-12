@@ -8,30 +8,30 @@ export default function About() {
 
       <div className="prose prose-lg max-w-none">
         <p className="text-xl text-gray-600 mb-8">
-          Welcome to Central Coast Swim, where we've been teaching the joy of swimming to our community since 2010. 
-          Our mission is to provide a safe, supportive, and fun environment for swimmers of all ages and skill levels.
+          Welcome to Central Coast Swim, where we've been sharing the joy of swimming with our community since 2010. 
+          Our mission is to provide a safe, comfortable, and enjoyable environment for swimmers of all ages to learn and grow.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           <div>
-            <h2 className="text-2xl font-semibold mb-4">Our Facility</h2>
+            <h2 className="text-2xl font-semibold mb-4">Our Pool</h2>
             <p className="text-gray-600 mb-4">
-              Our state-of-the-art facility features a heated indoor pool, comfortable viewing areas for parents, 
-              and modern changing rooms. The pool is maintained at a comfortable temperature year-round, making it 
-              perfect for lessons in any season.
+              Our cozy backyard pool offers a perfect setting for learning to swim. The pool is heated for comfort, 
+              and we maintain a warm, welcoming atmosphere that helps students feel at ease. Parents can relax in our 
+              comfortable seating area while watching their children's progress.
             </p>
             <ul className="list-disc list-inside text-gray-600 space-y-2">
-              <li>Heated indoor pool</li>
-              <li>Comfortable viewing areas</li>
-              <li>Modern changing facilities</li>
-              <li>Ample parking</li>
-              <li>Wheelchair accessible</li>
+              <li>Heated backyard pool</li>
+              <li>Comfortable seating for parents</li>
+              <li>Clean changing facilities</li>
+              <li>Easy street parking</li>
+              <li>Family-friendly environment</li>
             </ul>
           </div>
           <div className="relative h-64">
             <Image
               src="/pool-facility.jpg"
-              alt="Our swimming facility"
+              alt="Our swimming pool"
               fill
               className="object-cover rounded-lg"
             />
@@ -44,8 +44,8 @@ export default function About() {
             {[
               {
                 name: 'Andria McGhee',
-                role: 'Head Instructor',
-                bio: 'Certified swimming instructor with extensive experience teaching all age groups.',
+                role: 'Swimming Instructor',
+                bio: 'Experienced swimming instructor passionate about teaching water safety and swimming skills to all ages.',
                 image: '/instructor-1.jpg'
               }
             ].map((instructor) => (
@@ -71,37 +71,38 @@ export default function About() {
         <div className="bg-blue-50 rounded-lg p-6 mb-12">
           <h2 className="text-2xl font-semibold mb-4">Our Approach</h2>
           <p className="text-gray-600 mb-4">
-            At Central Coast Swim, we believe in a personalized approach to swimming instruction. 
-            Our programs are designed to build confidence and develop proper technique while ensuring 
-            safety and enjoyment in the water.
+            At Central Coast Swim, we focus on making swimming fun and accessible for everyone. 
+            Our gentle, patient approach helps students build confidence in the water while learning 
+            essential swimming skills at their own pace.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <h3 className="font-semibold mb-2">For Beginners</h3>
               <ul className="list-disc list-inside text-gray-600 space-y-1">
                 <li>Water safety basics</li>
-                <li>Comfort in the water</li>
-                <li>Basic swimming strokes</li>
-                <li>Breathing techniques</li>
+                <li>Getting comfortable in water</li>
+                <li>Basic floating and kicking</li>
+                <li>Simple swimming movements</li>
               </ul>
             </div>
             <div>
-              <h3 className="font-semibold mb-2">For Advanced Swimmers</h3>
+              <h3 className="font-semibold mb-2">For Intermediate Swimmers</h3>
               <ul className="list-disc list-inside text-gray-600 space-y-1">
-                <li>Stroke refinement</li>
-                <li>Endurance training</li>
-                <li>Competition preparation</li>
-                <li>Advanced techniques</li>
+                <li>Basic stroke development</li>
+                <li>Building swimming confidence</li>
+                <li>Water games and activities</li>
+                <li>Fun swimming skills</li>
               </ul>
             </div>
           </div>
         </div>
 
         <div className="text-center">
-          <h2 className="text-2xl font-semibold mb-4">Join Our Swimming Family</h2>
+          <h2 className="text-2xl font-semibold mb-4">Start Your Swimming Journey</h2>
           <p className="text-gray-600 mb-6">
-            Whether you're looking to learn to swim, improve your technique, or prepare for competition, 
-            we have a program that's right for you. Contact us today to start your swimming journey!
+            Whether you're taking your first dip or looking to improve your swimming skills, 
+            we're here to help you feel confident and safe in the water. Contact us today to 
+            schedule your first lesson!
           </p>
           <a
             href="/book"
