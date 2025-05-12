@@ -84,7 +84,7 @@ export default function Mission() {
             Be part of our journey to make swimming accessible and enjoyable for everyone in our community.
           </p>
           <a
-            href="/schedule"
+            href="/book"
             className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
           >
             Start Your Journey

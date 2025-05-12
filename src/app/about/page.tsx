@@ -39,26 +39,14 @@ export default function About() {
         </div>
 
         <div className="mb-12">
-          <h2 className="text-2xl font-semibold mb-6">Our Instructors</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <h2 className="text-2xl font-semibold mb-6">Our Instructor</h2>
+          <div className="grid grid-cols-1 gap-6">
             {[
               {
-                name: 'Sarah Johnson',
+                name: 'Andria McGhee',
                 role: 'Head Instructor',
-                bio: 'Certified swimming instructor with 15 years of experience teaching all age groups.',
+                bio: 'Certified swimming instructor with extensive experience teaching all age groups.',
                 image: '/instructor-1.jpg'
-              },
-              {
-                name: 'Michael Chen',
-                role: 'Senior Instructor',
-                bio: 'Former competitive swimmer with a passion for teaching proper technique.',
-                image: '/instructor-2.jpg'
-              },
-              {
-                name: 'Emily Rodriguez',
-                role: 'Junior Instructor',
-                bio: 'Specializes in teaching young children and beginners.',
-                image: '/instructor-3.jpg'
               }
             ].map((instructor) => (
               <div key={instructor.name} className="bg-white rounded-lg shadow-lg overflow-hidden">
@@ -116,7 +104,7 @@ export default function About() {
             we have a program that's right for you. Contact us today to start your swimming journey!
           </p>
           <a
-            href="/schedule"
+            href="/book"
             className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
           >
             Book a Lesson

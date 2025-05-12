@@ -1,9 +1,4 @@
 import React from 'react'
-import dynamic from 'next/dynamic'
-
-const GoogleCalendarButton = dynamic(() => import('@/components/GoogleCalendarButton'), {
-  ssr: false
-})
 
 export default function Book() {
   return (
@@ -16,7 +11,16 @@ export default function Book() {
             Select your preferred time slot below to book your swimming lesson.
           </p>
           
-          <GoogleCalendarButton />
+          <div className="w-full h-[600px]">
+            <iframe
+              src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ30_eM7WHSgwJaE27N-nvqe897igBEFDcARk-Npl-A3Og1vPzqxU7JDYx4kFStYlXXap2SBE5Yg?gv=true"
+              style={{ border: 0 }}
+              width="100%"
+              height="100%"
+              frameBorder="0"
+              title="Booking Calendar"
+            />
+          </div>
         </div>
       </div>
     </div>

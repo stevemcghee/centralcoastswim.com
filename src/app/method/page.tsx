@@ -102,7 +102,7 @@ export default function Method() {
             skilled swimmer.
           </p>
           <a
-            href="/schedule"
+            href="/book"
             className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
           >
             Book a Trial Lesson

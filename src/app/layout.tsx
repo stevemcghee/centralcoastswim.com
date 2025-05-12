@@ -25,7 +25,7 @@ export default function RootLayout({
               <Link href="/" className="hover:text-blue-200">Home</Link>
               <Link href="/mission" className="hover:text-blue-200">Our Mission</Link>
               <Link href="/method" className="hover:text-blue-200">Our Method</Link>
-              <Link href="/book" className="hover:text-blue-200">Book</Link>
+              <Link href="/book" className="hover:text-blue-200">Book a Lesson</Link>
               <Link href="/about" className="hover:text-blue-200">About Us</Link>
               <Link href="/photos" className="hover:text-blue-200">Photos</Link>
             </div>

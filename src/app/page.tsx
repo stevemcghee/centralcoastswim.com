@@ -25,7 +25,7 @@ export default function Home() {
             Discover the joy of swimming with expert instructors in a safe and supportive environment.
           </p>
           <Link
-            href="/schedule"
+            href="/book"
             className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg text-lg font-semibold transition-colors"
           >
             Book a Lesson
@@ -75,7 +75,7 @@ export default function Home() {
             Join us today and experience the joy of swimming in a supportive and professional environment.
           </p>
           <Link
-            href="/schedule"
+            href="/book"
             className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-3 rounded-lg text-lg font-semibold transition-colors"
           >
             Book Your First Lesson
