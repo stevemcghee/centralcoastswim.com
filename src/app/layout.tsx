@@ -25,7 +25,7 @@ export default function RootLayout({
               <Link href="/" className="hover:text-blue-200">Home</Link>
               <Link href="/mission" className="hover:text-blue-200">Our Mission</Link>
               <Link href="/method" className="hover:text-blue-200">Our Method</Link>
-              <Link href="/schedule" className="hover:text-blue-200">Schedule</Link>
+              <Link href="/book" className="hover:text-blue-200">Book</Link>
               <Link href="/about" className="hover:text-blue-200">About Us</Link>
               <Link href="/photos" className="hover:text-blue-200">Photos</Link>
             </div>
@@ -55,7 +55,7 @@ export default function RootLayout({
               </div>
             </div>
             <div className="text-center mt-8 pt-8 border-t border-gray-700">
-              <p>&copy; {new Date().getFullYear()} Central Coast Swim. All rights reserved.</p>
+              <p>&copy; 2024 Central Coast Swim. All rights reserved.</p>
             </div>
           </div>
         </footer>
