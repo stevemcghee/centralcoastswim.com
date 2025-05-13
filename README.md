@@ -50,7 +50,7 @@ centralcoastswim.com/
 │   ├── app/           # Next.js app directory
 │   │   ├── about/     # About page
 │   │   ├── photos/    # Photo gallery page
-│   │   ├── schedule/  # Scheduling page
+│   │   ├── book/      # Booking page
 │   │   └── layout.tsx # Root layout
 │   └── components/    # Reusable components
 └── package.json       # Project dependencies
