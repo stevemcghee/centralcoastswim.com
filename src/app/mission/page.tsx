@@ -21,6 +21,8 @@ export default function Mission() {
               src="/pool-facility.jpg"
               alt="Our swimming facility"
               fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              loading="eager"
               className="object-cover rounded-lg"
             />
           </div>

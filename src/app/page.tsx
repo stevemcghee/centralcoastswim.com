@@ -13,8 +13,9 @@ export default function Home() {
             src="/hero-pool.jpg"
             alt="Swimming pool"
             fill
-            className="object-cover"
+            sizes="100vw"
             priority
+            className="object-cover"
           />
         </div>
         <div className="relative z-20 container mx-auto px-4 text-white">

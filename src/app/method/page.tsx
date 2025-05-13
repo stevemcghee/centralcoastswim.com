@@ -21,6 +21,8 @@ export default function Method() {
               src="/gallery/gallery-1.jpg"
               alt="Swimming instruction"
               fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              loading="eager"
               className="object-cover rounded-lg"
             />
           </div>

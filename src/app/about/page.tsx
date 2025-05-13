@@ -32,6 +32,8 @@ export default function About() {
               src="/pool-facility.jpg"
               alt="Our swimming pool"
               fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              loading="eager"
               className="object-cover rounded-lg"
             />
           </div>
@@ -54,6 +56,8 @@ export default function About() {
                     src={instructor.image}
                     alt={instructor.name}
                     fill
+                    sizes="(max-width: 768px) 100vw, 400px"
+                    loading="eager"
                     className="object-cover"
                   />
                 </div>
