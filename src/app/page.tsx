@@ -10,7 +10,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-blue-900/50 z-10" />
         <div className="absolute inset-0">
           <Image
-            src="/hero-pool.jpg"
+            src="/optimized/hero-pool.jpg"
             alt="Swimming pool"
             fill
             sizes="100vw"

@@ -4,21 +4,22 @@ const path = require('path');
 
 const GALLERY_DIR = path.join(__dirname, '../public/gallery');
 const OPTIMIZED_DIR = path.join(__dirname, '../public/gallery/optimized');
+const PUBLIC_DIR = path.join(__dirname, '../public');
 
 // Create optimized directory if it doesn't exist
 if (!fs.existsSync(OPTIMIZED_DIR)) {
   fs.mkdirSync(OPTIMIZED_DIR, { recursive: true });
 }
 
-async function optimizeImage(inputPath, outputPath) {
+async function optimizeImage(inputPath, outputPath, options) {
   try {
     await sharp(inputPath)
-      .resize(800, 800, {
-        fit: 'inside',
+      .resize(options.width, options.height, {
+        fit: options.fit || 'inside',
         withoutEnlargement: true
       })
       .jpeg({
-        quality: 80,
+        quality: options.quality || 80,
         progressive: true
       })
       .toFile(outputPath);
@@ -36,11 +37,37 @@ async function optimizeGallery() {
     if (file.endsWith('.jpg') || file.endsWith('.jpeg')) {
       const inputPath = path.join(GALLERY_DIR, file);
       const outputPath = path.join(OPTIMIZED_DIR, file);
-      await optimizeImage(inputPath, outputPath);
+      await optimizeImage(inputPath, outputPath, {
+        width: 800,
+        height: 800,
+        quality: 80
+      });
     }
   }
 }
 
-optimizeGallery().then(() => {
-  console.log('Gallery optimization complete!');
-}); 
+async function optimizeHero() {
+  const heroImage = 'hero-pool.jpg';
+  const inputPath = path.join(PUBLIC_DIR, heroImage);
+  const outputPath = path.join(PUBLIC_DIR, 'optimized', heroImage);
+
+  // Create optimized directory if it doesn't exist
+  if (!fs.existsSync(path.join(PUBLIC_DIR, 'optimized'))) {
+    fs.mkdirSync(path.join(PUBLIC_DIR, 'optimized'), { recursive: true });
+  }
+
+  await optimizeImage(inputPath, outputPath, {
+    width: 1920,
+    height: 1080,
+    fit: 'cover',
+    quality: 85
+  });
+}
+
+async function optimizeAll() {
+  await optimizeGallery();
+  await optimizeHero();
+  console.log('All images optimization complete!');
+}
+
+optimizeAll(); 
