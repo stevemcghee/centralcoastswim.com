@@ -3,42 +3,42 @@ import Image from 'next/image'
 
 const photos = [
   {
-    src: '/gallery/gallery-1.jpg',
+    src: '/gallery/optimized/gallery-1.jpg',
     alt: 'Swimming lesson in progress',
     category: 'Lessons'
   },
   {
-    src: '/gallery/gallery-2.jpg',
+    src: '/gallery/optimized/gallery-2.jpg',
     alt: 'Children learning to swim',
     category: 'Lessons'
   },
   {
-    src: '/gallery/gallery-3.jpg',
+    src: '/gallery/optimized/gallery-3.jpg',
     alt: 'Our swimming facility',
     category: 'Facility'
   },
   {
-    src: '/gallery/gallery-4.jpg',
+    src: '/gallery/optimized/gallery-4.jpg',
     alt: 'Pool area',
     category: 'Facility'
   },
   {
-    src: '/gallery/gallery-5.jpg',
+    src: '/gallery/optimized/gallery-5.jpg',
     alt: 'Swimming competition',
     category: 'Events'
   },
   {
-    src: '/gallery/gallery-6.jpg',
+    src: '/gallery/optimized/gallery-6.jpg',
     alt: 'Swimming meet',
     category: 'Events'
   },
   {
-    src: '/gallery/gallery-7.jpg',
+    src: '/gallery/optimized/gallery-7.jpg',
     alt: 'Swim team practice',
     category: 'Team'
   },
   {
-    src: '/gallery/gallery-8.jpg',
+    src: '/gallery/optimized/gallery-8.jpg',
     alt: 'Team building activity',
     category: 'Team'
   }
@@ -70,7 +70,7 @@ export default function Photos() {
               alt={photo.alt}
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              loading="eager"
+              loading="lazy"
               className="object-cover transition-transform duration-300 group-hover:scale-110"
             />
             <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300">
