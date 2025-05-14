@@ -46,6 +46,11 @@ export default function MainLayout({
                 </a>
               </p>
               <p>Call Andria at: (805) 330-2184</p>
+              <p>
+                <Link href="/flyers" className="hover:text-blue-200">
+                  Printable Flyers
+                </Link>
+              </p>
             </div>
             <div>
               <h3 className="text-xl font-bold mb-4">Location</h3>
