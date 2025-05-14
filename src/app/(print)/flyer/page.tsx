@@ -73,21 +73,30 @@ export default function FlyerPage() {
             <p style={{ fontSize: '1.25rem', marginBottom: '0.5rem' }}>
               Professional Swimming Instruction
             </p>
-            <p style={{ fontSize: '1.25rem' }}>
+            <p style={{ fontSize: '1.25rem', marginBottom: '1rem' }}>
               Private and Group Lessons Available
             </p>
+            <div style={{ borderTop: '1px solid #e5e7eb', paddingTop: '0.75rem' }}>
+              <div style={{ width: '8rem', height: '8rem', position: 'relative', marginBottom: '1rem' }}>
+                <Image
+                  src="/gallery/andria-hunewill-sunset.jpg"
+                  alt="Andria Hunewill, swimming instructor"
+                  fill
+                  style={{ objectFit: 'cover', borderRadius: '0.5rem' }}
+                  priority
+                />
+              </div>
+              <p style={{ fontSize: '1rem', marginBottom: '0.25rem', color: '#4b5563' }}>
+                Call Andria: (805) 330-2184
+              </p>
+              <p style={{ fontSize: '1rem', color: '#4b5563' }}>
+                Email: info@centralcoastswim.com
+              </p>
+            </div>
           </div>
 
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <div style={{ width: '8rem', height: '8rem', position: 'relative', marginBottom: '1rem' }}>
-              <Image
-                src="/gallery/andria-hunewill-sunset.jpg"
-                alt="Andria Hunewill, swimming instructor"
-                fill
-                style={{ objectFit: 'cover', borderRadius: '0.5rem' }}
-                priority
-              />
-            </div>
+            <p style={{ fontSize: '0.875rem', marginBottom: '0.5rem' }}>Book a lesson here:</p>
             <div style={{ width: '8rem', height: '8rem', position: 'relative' }}>
               <Image
                 src="/images/qrcode_centralcoastswim.com.png"
@@ -97,8 +106,7 @@ export default function FlyerPage() {
                 priority
               />
             </div>
-            <p style={{ fontSize: '0.875rem', marginTop: '0.5rem' }}>Visit us at:</p>
-            <p style={{ fontSize: '0.875rem', fontWeight: 'bold', color: '#2563eb' }}>
+            <p style={{ fontSize: '0.875rem', fontWeight: 'bold', color: '#2563eb', marginTop: '0.5rem' }}>
               centralcoastswim.com
             </p>
           </div>
