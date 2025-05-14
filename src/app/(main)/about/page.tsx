@@ -27,7 +27,7 @@ export default function About() {
           </div>
           <div className="relative h-64">
             <Image
-              src="/pool-facility.jpg"
+              src="/gallery/pool-home.jpg"
               alt="Our swimming pool"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
@@ -45,21 +45,21 @@ export default function About() {
                 name: 'Andria McGhee',
                 role: 'Swimming Instructor',
                 bio: 'Experienced swimming instructor passionate about teaching water safety and swimming skills to all ages.',
-                image: '/instructor-1.jpg'
+                image: '/gallery/andria-hunewill-sunset.jpg'
               }
             ].map((instructor) => (
-              <div key={instructor.name} className="bg-white rounded-lg shadow-lg overflow-hidden">
-                <div className="relative h-48">
+              <div key={instructor.name} className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col md:flex-row items-center">
+                <div className="relative h-96 w-96 mx-auto p-0 m-0">
                   <Image
                     src={instructor.image}
                     alt={instructor.name}
                     fill
                     sizes="(max-width: 768px) 100vw, 400px"
                     loading="eager"
-                    className="object-cover"
+                    className="object-contain"
                   />
                 </div>
-                <div className="p-4">
+                <div className="p-4 flex-1">
                   <h3 className="font-semibold text-lg">{instructor.name}</h3>
                   <p className="text-blue-600 mb-2">{instructor.role}</p>
                   <p className="text-gray-600">{instructor.bio}</p>
