@@ -25,7 +25,7 @@ export default function About() {
               <li>Family-friendly environment</li>
             </ul>
           </div>
-          <div className="relative h-64">
+          <div className="relative h-128">
             <Image
               src="/gallery/pool-home.jpg"
               alt="Our swimming pool"
