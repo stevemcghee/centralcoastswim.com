@@ -62,24 +62,6 @@ export default function Mission() {
           </div>
         </div>
 
-        <div className="mb-12">
-          <h2 className="text-2xl font-semibold mb-4">Our Impact</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-            <div className="p-4">
-              <div className="text-4xl font-bold text-blue-600 mb-2">1000+</div>
-              <p className="text-gray-600">Students Taught</p>
-            </div>
-            <div className="p-4">
-              <div className="text-4xl font-bold text-blue-600 mb-2">15+</div>
-              <p className="text-gray-600">Years of Experience</p>
-            </div>
-            <div className="p-4">
-              <div className="text-4xl font-bold text-blue-600 mb-2">98%</div>
-              <p className="text-gray-600">Student Satisfaction</p>
-            </div>
-          </div>
-        </div>
-
         <div className="text-center">
           <h2 className="text-2xl font-semibold mb-4">Join Our Mission</h2>
           <p className="text-gray-600 mb-6">

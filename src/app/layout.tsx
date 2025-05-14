@@ -39,7 +39,11 @@ export default function RootLayout({
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div>
                 <h3 className="text-xl font-bold mb-4">Contact Us</h3>
-                <p>Email: info@centralcoastswim.com</p>
+                <p>
+                  <a href="mailto:info@centralcoastswim.com" className="hover:text-blue-200">
+                    info@centralcoastswim.com
+                  </a>
+                </p>
                 <p>Call Andria at: (805) 330-2184</p>
               </div>
               <div>
@@ -49,7 +53,6 @@ export default function RootLayout({
               <div>
                 <h3 className="text-xl font-bold mb-4">Follow Us</h3>
                 <div className="space-x-4">
-                  <a href="#" className="hover:text-blue-200">Facebook</a>
                   <a href="#" className="hover:text-blue-200">Instagram</a>
                 </div>
               </div>

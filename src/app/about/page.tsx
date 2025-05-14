@@ -22,8 +22,6 @@ export default function About() {
             <ul className="list-disc list-inside text-gray-600 space-y-2">
               <li>Heated backyard pool</li>
               <li>Comfortable seating for parents</li>
-              <li>Clean changing facilities</li>
-              <li>Easy street parking</li>
               <li>Family-friendly environment</li>
             </ul>
           </div>
