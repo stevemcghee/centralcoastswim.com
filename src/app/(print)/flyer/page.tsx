@@ -87,7 +87,7 @@ export default function FlyerPage() {
                 />
               </div>
               <p style={{ fontSize: '1rem', marginBottom: '0.25rem', color: '#4b5563' }}>
-                Call Andria: (805) 330-2184
+                Call Andria: (925) 330-2184
               </p>
               <p style={{ fontSize: '1rem', color: '#4b5563' }}>
                 Email: info@centralcoastswim.com
