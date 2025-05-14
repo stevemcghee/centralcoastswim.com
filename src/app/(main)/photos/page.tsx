@@ -34,6 +34,14 @@ const photos = [
     src: '/gallery/andria-pool.jpg',
     alt: 'Andria at the pool',
   },
+  {
+    src: '/gallery/pool-night.jpg',
+    alt: 'Central Coast Swim pool at night',
+  },
+  {
+    src: '/gallery/pool-friends.jpg',
+    alt: 'Friends at the pool',
+  },
 ]
 
 export default function Photos() {
