@@ -21,8 +21,9 @@ export default function Book() {
                 </li>
               </ul>
               <p className="text-gray-700 mt-3 italic">
-                All Sessions are 8 days: Monday - Thursday, at the same time every day, for 2 weeks.  
+                All Sessions are 8 days: Monday - Thursday, at the same time every day, for 2 weeks.
                 <br/>
+                There are 3 spots available for each session.
               </p>
             </div>
 
@@ -35,16 +36,36 @@ export default function Book() {
             </ol>
           </div>
 
-          <div className="w-full aspect-[4/3] rounded-lg overflow-hidden">
-            <iframe
-              src="https://calendar.google.com/calendar/embed?src=89440ef93c030fce64e18c624102a9c021903642d132489881b7c42662ed97d2%40group.calendar.google.com&ctz=America%2FLos_Angeles&mode=WEEK&showNav=1&showPrint=0&showTabs=0&showCalendars=0&showTz=0"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              title="Swim Lesson Schedule"
-            />
+          <div className="space-y-8">
+            <div>
+              <h3 className="text-xl font-semibold mb-4">Weekly View</h3>
+              <div className="w-full aspect-[4/3] rounded-lg overflow-hidden">
+                <iframe
+                  src="https://calendar.google.com/calendar/embed?src=89440ef93c030fce64e18c624102a9c021903642d132489881b7c42662ed97d2%40group.calendar.google.com&ctz=America%2FLos_Angeles&mode=WEEK&showNav=1&showPrint=0&showTabs=0&showCalendars=0&showTz=0"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  title="Swim Lesson Schedule - Weekly View"
+                />
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-semibold mb-4">Detailed Schedule</h3>
+              <div className="w-full aspect-[3/4] rounded-lg overflow-hidden">
+                <iframe
+                  src="https://calendar.google.com/calendar/embed?src=89440ef93c030fce64e18c624102a9c021903642d132489881b7c42662ed97d2%40group.calendar.google.com&ctz=America%2FLos_Angeles&mode=AGENDA&showNav=1&showPrint=0&showTabs=0&showCalendars=0&showTz=0"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  title="Swim Lesson Schedule - Detailed View"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>
