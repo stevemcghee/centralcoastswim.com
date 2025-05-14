@@ -61,7 +61,7 @@ export default function MainLayout({
             <div>
               <h3 className="text-xl font-bold mb-4">Follow Us</h3>
               <div className="space-x-4">
-                <a href="#" className="hover:text-blue-200">
+                <a href="https://instagram.com/central_coast_swim" target="_blank" rel="noopener noreferrer" className="hover:text-blue-200">
                   Instagram
                 </a>
               </div>

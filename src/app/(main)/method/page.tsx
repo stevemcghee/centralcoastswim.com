@@ -46,17 +46,21 @@ export default function Method() {
               </p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="text-xl font-semibold mb-3 text-blue-600">3. Personalized Attention</h3>
+              <h3 className="text-xl font-semibold mb-3 text-blue-600">3. Group Learning Benefits</h3>
               <p className="text-gray-600">
-                Whether in group or individual lessons, each student receives personalized attention and 
-                feedback. We adapt our teaching style to match each student's learning pace and goals.
+                We teach children in groups because they learn better from each other and take more chances 
+                when their peers are present. During breaks on the swim platform, they have time to practice 
+                skills learned one-on-one. This approach helps build trust and comfort with classmates and 
+                teachers, making them more willing to take positive risks like putting their head underwater 
+                or floating.
               </p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-sm">
               <h3 className="text-xl font-semibold mb-3 text-blue-600">4. Progressive Development</h3>
               <p className="text-gray-600">
                 Our curriculum is designed to build skills progressively, ensuring students develop a 
-                strong foundation before advancing to more complex techniques.
+                strong foundation before advancing to more complex techniques. We maintain consistency 
+                and predictability through our 8-day program structure.
               </p>
             </div>
           </div>
@@ -66,37 +70,82 @@ export default function Method() {
           <h2 className="text-2xl font-semibold mb-4">Our Programs</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="bg-white p-6 rounded-lg">
-              <h3 className="text-xl font-semibold mb-3 text-blue-600">Learn to Swim (Group Lessons)</h3>
+              <h3 className="text-xl font-semibold mb-3 text-blue-600">8-Day Program</h3>
               <p className="text-gray-600 mb-4">
-                Perfect for children ages 5-15, our group lessons focus on water safety and having fun 
-                while learning essential swimming skills.
+                Our comprehensive 8-day program runs Monday through Thursday for 2 weeks, providing 
+                consistent and predictable learning opportunities.
               </p>
-              <h4 className="font-semibold mb-2">Key Features:</h4>
+              <h4 className="font-semibold mb-2">Program Details:</h4>
               <ul className="list-disc list-inside text-gray-600 space-y-1">
-                <li>Age-appropriate group sizes</li>
-                <li>Focus on water safety</li>
-                <li>Fun, engaging activities</li>
-                <li>Social skill development</li>
-                <li>Basic stroke introduction</li>
-                <li>Confidence building</li>
+                <li>$175 per student</li>
+                <li>One teacher to 3 kids</li>
+                <li>Adult and child classes limited to 3 students</li>
+                <li>Private lessons available at $525 (one-on-one)</li>
+                <li>30-minute classes</li>
+                <li>Morning and afternoon sessions available</li>
               </ul>
             </div>
             <div className="bg-white p-6 rounded-lg">
-              <h3 className="text-xl font-semibold mb-3 text-blue-600">Get Better at Swimming (Individual Lessons)</h3>
+              <h3 className="text-xl font-semibold mb-3 text-blue-600">Single Lessons</h3>
               <p className="text-gray-600 mb-4">
-                One-on-one instruction for all ages featuring our innovative jet system, perfect for 
-                technique refinement and personalized coaching.
+                Available for children needing a confidence boost or extra practice with specific skills, 
+                or for adults who prefer one-day lessons.
               </p>
-              <h4 className="font-semibold mb-2">Key Features:</h4>
+              <h4 className="font-semibold mb-2">Lesson Options:</h4>
               <ul className="list-disc list-inside text-gray-600 space-y-1">
-                <li>One-on-one coaching</li>
-                <li>State-of-the-art jet system</li>
-                <li>Technique-focused training</li>
-                <li>All ages welcome</li>
-                <li>Low-stress environment</li>
-                <li>Customized goals</li>
+                <li>$25 - 1 teacher to 3 kids</li>
+                <li>$75 - 1 teacher to 1 student</li>
+                <li>Perfect for skill refinement</li>
+                <li>Great for confidence building</li>
+                <li>Flexible scheduling</li>
+                <li>Personalized attention</li>
               </ul>
             </div>
+          </div>
+        </div>
+
+        <div className="bg-white p-6 rounded-lg shadow-sm mb-12">
+          <h2 className="text-2xl font-semibold mb-4">Class Schedule</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <h3 className="text-xl font-semibold mb-3 text-blue-600">Morning Sessions</h3>
+              <ul className="list-disc list-inside text-gray-600 space-y-1">
+                <li>10:00 AM</li>
+                <li>10:45 AM</li>
+                <li>11:30 AM</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold mb-3 text-blue-600">Afternoon Sessions</h3>
+              <ul className="list-disc list-inside text-gray-600 space-y-1">
+                <li>2:30 PM</li>
+                <li>3:15 PM</li>
+                <li>4:00 PM</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-blue-50 rounded-lg p-6 mb-12">
+          <h2 className="text-2xl font-semibold mb-4">Location & Directions</h2>
+          <p className="mb-4">
+            <strong>Address:</strong> 6450 Squire Knoll Road, San Luis Obispo
+          </p>
+          <div className="prose max-w-none">
+            <h3 className="text-xl font-semibold mb-2">Directions:</h3>
+            <ol className="list-decimal pl-6 space-y-2">
+              <li>Take the 101 Freeway and exit at San Luis Bay Drive near Avila</li>
+              <li>If traveling south, turn left; if traveling north, turn right (heading east, away from the ocean)</li>
+              <li>The road will curve 90 degrees to the right onto Monte Rd</li>
+              <li>Then curve left 90 degrees onto Squire Canyon Road</li>
+              <li>Travel just under a mile on Squire Canyon Road until you see a green hanging sign for Squire KNOLL Road</li>
+              <li>Turn left onto Squire Knoll Road</li>
+              <li>Continue straight up the bumpy road, through the olive trees</li>
+              <li>Park in the brick paved parking area</li>
+            </ol>
+            <p className="mt-4 text-sm text-gray-600">
+              Note: There are many roads named Squire in this neighborhood, so please follow these directions carefully.
+            </p>
           </div>
         </div>
 
