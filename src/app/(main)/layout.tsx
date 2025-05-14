@@ -47,7 +47,7 @@ export default function MainLayout({
                   info@centralcoastswim.com
                 </a>
               </p>
-              <p>Call Andria at: (805) 330-2184</p>
+              <p>Call Andria at: (925) 330-2184</p>
               <p>
                 <Link href="/flyers" className="hover:text-blue-200">
                   Printable Flyers

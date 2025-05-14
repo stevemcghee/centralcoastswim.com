@@ -126,29 +126,6 @@ export default function Method() {
           </div>
         </div>
 
-        <div className="bg-blue-50 rounded-lg p-6 mb-12">
-          <h2 className="text-2xl font-semibold mb-4">Location & Directions</h2>
-          <p className="mb-4">
-            <strong>Address:</strong> 6450 Squire Knoll Road, San Luis Obispo
-          </p>
-          <div className="prose max-w-none">
-            <h3 className="text-xl font-semibold mb-2">Directions:</h3>
-            <ol className="list-decimal pl-6 space-y-2">
-              <li>Take the 101 Freeway and exit at San Luis Bay Drive near Avila</li>
-              <li>If traveling south, turn left; if traveling north, turn right (heading east, away from the ocean)</li>
-              <li>The road will curve 90 degrees to the right onto Monte Rd</li>
-              <li>Then curve left 90 degrees onto Squire Canyon Road</li>
-              <li>Travel just under a mile on Squire Canyon Road until you see a green hanging sign for Squire KNOLL Road</li>
-              <li>Turn left onto Squire Knoll Road</li>
-              <li>Continue straight up the bumpy road, through the olive trees</li>
-              <li>Park in the brick paved parking area</li>
-            </ol>
-            <p className="mt-4 text-sm text-gray-600">
-              Note: There are many roads named Squire in this neighborhood, so please follow these directions carefully.
-            </p>
-          </div>
-        </div>
-
         <div className="text-center">
           <h2 className="text-2xl font-semibold mb-4">Start Your Swimming Journey</h2>
           <p className="text-gray-600 mb-6">
