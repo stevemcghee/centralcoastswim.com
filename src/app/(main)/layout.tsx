@@ -22,7 +22,7 @@ export default function MainLayout({
             <Link href="/method" className="hover:text-blue-200">
               Our Method
             </Link>
-            <Link href="/book" className="hover:text-blue-200">
+            <Link href="/book" className="bg-white text-blue-600 px-4 py-2 rounded-lg hover:bg-blue-50 transition-colors">
               Book a Lesson
             </Link>
             <Link href="/about" className="hover:text-blue-200">
