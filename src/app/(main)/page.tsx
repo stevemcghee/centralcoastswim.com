@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div className="space-y-16">
       {/* Hero Section */}
-      <section className="relative h-[600px] flex items-center">
+      <section className="relative min-h-[600px] flex items-center">
         <div className="absolute inset-0 bg-blue-900/50 z-10" />
         <div className="absolute inset-0">
           <Image
@@ -18,19 +18,35 @@ export default function Home() {
             className="object-cover"
           />
         </div>
-        <div className="relative z-20 container mx-auto px-4 text-white">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            Welcome to Central Coast Swim
-          </h1>
-          <p className="text-xl md:text-2xl mb-8 max-w-2xl">
-            From first-time swimmers to technique refinement, we offer personalized swimming instruction for all ages and skill levels.
-          </p>
-          <Link
-            href="/book"
-            className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg text-lg font-semibold transition-colors"
-          >
-            Book a Lesson
-          </Link>
+        <div className="relative z-20 container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div className="text-white">
+              <h1 className="text-5xl md:text-6xl font-bold mb-6">
+                Welcome to Central Coast Swim
+              </h1>
+              <p className="text-xl md:text-2xl mb-8 max-w-2xl">
+                From first-time swimmers to technique refinement, we offer personalized swimming instruction for all ages and skill levels.
+              </p>
+              <Link
+                href="/book"
+                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg text-lg font-semibold transition-colors"
+              >
+                Book a Lesson
+              </Link>
+            </div>
+            <div className="flex justify-end">
+              <div className="relative aspect-square w-[200px] md:w-[250px] rounded-lg overflow-hidden shadow-xl">
+                <Image
+                  src="/gallery/andria-hunewill-sunset.jpg"
+                  alt="Andria Hunewill, swimming instructor"
+                  fill
+                  sizes="(max-width: 768px) 200px, 250px"
+                  priority
+                  className="object-cover"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
