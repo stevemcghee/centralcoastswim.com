@@ -76,6 +76,15 @@ export default function FlyerWavePage() {
             </p>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+            <div style={{ width: '8rem', height: '8rem', position: 'relative', marginBottom: '1rem' }}>
+              <Image
+                src="/gallery/andria-hunewill-sunset.jpg"
+                alt="Andria Hunewill, swimming instructor"
+                fill
+                style={{ objectFit: 'cover', borderRadius: '0.5rem' }}
+                priority
+              />
+            </div>
             <div style={{ width: '8rem', height: '8rem', position: 'relative' }}>
               <Image
                 src="/images/qrcode_centralcoastswim.com.png"
