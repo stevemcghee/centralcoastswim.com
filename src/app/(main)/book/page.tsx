@@ -21,7 +21,8 @@ export default function Book() {
                 </li>
               </ul>
               <p className="text-gray-700 mt-3 italic">
-                All Sessions are: Monday - Thursday, same time every day.
+                All Sessions are 8 days: Monday - Thursday, at the same time every day, for 2 weeks.  
+                <br/>
               </p>
             </div>
 
