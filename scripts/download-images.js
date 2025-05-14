@@ -10,7 +10,7 @@ const images = [
   },
   {
     url: 'https://images.unsplash.com/photo-1530549387789-4c1017266635',
-    filename: 'pool-facility.jpg',
+    filename: 'andria-hunewill-sunset.jpg',
     directory: 'public'
   },
   {

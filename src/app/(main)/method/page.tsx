@@ -18,7 +18,7 @@ export default function Method() {
           </div>
           <div className="relative h-64">
             <Image
-              src="/gallery/gallery-1.jpg"
+              src="/gallery/andria-pool.jpg"
               alt="Swimming instruction"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"

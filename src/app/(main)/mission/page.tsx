@@ -18,7 +18,7 @@ export default function Mission() {
           </div>
           <div className="relative h-64">
             <Image
-              src="/pool-facility.jpg"
+              src="/gallery/andria-hunewill-sunset.jpg"
               alt="Our swimming facility"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
