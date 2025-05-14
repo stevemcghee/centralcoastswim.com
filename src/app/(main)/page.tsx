@@ -19,7 +19,7 @@ export default function Home() {
           />
         </div>
         <div className="relative z-20 container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
             <div className="text-white">
               <h1 className="text-5xl md:text-6xl font-bold mb-6">
                 Welcome to Central Coast Swim
@@ -35,7 +35,7 @@ export default function Home() {
               </Link>
             </div>
             <div className="flex justify-end">
-              <div className="relative aspect-square w-[200px] md:w-[250px] rounded-lg overflow-hidden shadow-xl">
+              <div className="relative aspect-square w-[200px] md:w-[250px] rounded-lg overflow-hidden shadow-xl border-4 border-white">
                 <Image
                   src="/gallery/andria-hunewill-sunset.jpg"
                   alt="Andria Hunewill, swimming instructor"
