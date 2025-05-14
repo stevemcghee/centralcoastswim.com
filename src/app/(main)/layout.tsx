@@ -8,29 +8,31 @@ export default function MainLayout({
   return (
     <>
       <nav className="bg-blue-600 text-white p-4">
-        <div className="container mx-auto flex justify-between items-center">
-          <Link href="/" className="text-2xl font-bold">
-            Central Coast Swim
-          </Link>
-          <div className="space-x-6">
-            <Link href="/" className="hover:text-blue-200">
-              Home
+        <div className="container mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <Link href="/" className="text-2xl font-bold mb-4 md:mb-0">
+              Central Coast Swim
             </Link>
-            <Link href="/mission" className="hover:text-blue-200">
-              Our Mission
-            </Link>
-            <Link href="/method" className="hover:text-blue-200">
-              Our Method
-            </Link>
-            <Link href="/book" className="bg-white text-blue-600 px-4 py-2 rounded-lg hover:bg-blue-50 transition-colors">
-              Book a Lesson
-            </Link>
-            <Link href="/about" className="hover:text-blue-200">
-              About Us
-            </Link>
-            <Link href="/photos" className="hover:text-blue-200">
-              Photos
-            </Link>
+            <div className="flex flex-wrap justify-center gap-4 md:gap-6 items-center">
+              <Link href="/" className="hover:text-blue-200 whitespace-nowrap py-2">
+                Home
+              </Link>
+              <Link href="/mission" className="hover:text-blue-200 whitespace-nowrap py-2">
+                Our Mission
+              </Link>
+              <Link href="/method" className="hover:text-blue-200 whitespace-nowrap py-2">
+                Our Method
+              </Link>
+              <Link href="/book" className="bg-white text-blue-600 px-4 py-2 rounded-lg hover:bg-blue-50 transition-colors whitespace-nowrap">
+                Book a Lesson
+              </Link>
+              <Link href="/about" className="hover:text-blue-200 whitespace-nowrap py-2">
+                About Us
+              </Link>
+              <Link href="/photos" className="hover:text-blue-200 whitespace-nowrap py-2">
+                Photos
+              </Link>
+            </div>
           </div>
         </div>
       </nav>
