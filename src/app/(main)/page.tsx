@@ -65,6 +65,8 @@ export default function Home() {
               Perfect for kids of all ages, our group lessons focus on water safety and having fun in the pool. 
               In a supportive group environment, children learn essential swimming skills while building confidence 
               and making new friends.
+              <br/> 
+              Individual lessons for all ages are also available in the privacy of our backyard. 
             </p>
             <ul className="text-gray-600 space-y-2 mb-6">
               <li>• Age-appropriate group sizes</li>
