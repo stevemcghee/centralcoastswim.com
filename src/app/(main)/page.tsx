@@ -62,7 +62,7 @@ export default function Home() {
             </div>
             <h3 className="text-2xl font-semibold mb-4 text-center">Learn to Swim</h3>
             <p className="text-gray-600 mb-4">
-              Perfect for kids ages 5-15, our group lessons focus on water safety and having fun in the pool. 
+              Perfect for kids of all ages, our group lessons focus on water safety and having fun in the pool. 
               In a supportive group environment, children learn essential swimming skills while building confidence 
               and making new friends.
             </p>
