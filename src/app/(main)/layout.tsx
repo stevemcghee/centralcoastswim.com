@@ -49,8 +49,8 @@ export default function MainLayout({
               </p>
               <p>Call Andria at: (925) 330-2184</p>
               <p>
-                <Link href="/flyers" className="hover:text-blue-200">
-                  Printable Flyers
+                <Link href="/admin" className="hover:text-blue-200">
+                  Admin Tools
                 </Link>
               </p>
             </div>

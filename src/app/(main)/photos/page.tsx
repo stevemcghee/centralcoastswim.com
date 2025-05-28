@@ -49,7 +49,7 @@ export default function Photos() {
     <div className="max-w-6xl mx-auto">
       <h1 className="text-4xl font-bold mb-8">Photo Gallery</h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
         {photos.map((photo, index) => (
           <div 
             key={index} 
@@ -66,6 +66,23 @@ export default function Photos() {
             />
           </div>
         ))}
+      </div>
+
+      <div className="mt-12">
+        <h2 className="text-3xl font-bold mb-6">Follow Us on Instagram</h2>
+        <div className="bg-white p-6 rounded-lg shadow-sm">
+          <div className="w-full aspect-[4/3] rounded-lg overflow-hidden">
+            <iframe
+              src="https://www.instagram.com/central_coast_swim/embed"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              title="Central Coast Swim Instagram Feed"
+            />
+          </div>
+        </div>
       </div>
     </div>
   )

@@ -24,6 +24,9 @@ export default function Book() {
                 All Sessions are 8 days: Monday - Thursday, at the same time every day, for 2 weeks.
                 <br/>
                 There are 3 spots available for each session.
+                <br/>
+                <br/>
+                Be sure to click on the event in the calendar below to see the details.
               </p>
             </div>
 
