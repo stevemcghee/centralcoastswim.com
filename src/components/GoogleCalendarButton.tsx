@@ -78,10 +78,10 @@ export default function GoogleCalendarButton() {
       />
       <div id="google-calendar-button">
         {isLoading && (
-          <div className="animate-pulse bg-gray-200 h-10 w-48 rounded"></div>
+          <div data-testid="google-calendar-loading" className="animate-pulse bg-gray-200 h-10 w-48 rounded"></div>
         )}
         {error && (
-          <div className="text-red-500 text-sm mt-2">
+          <div data-testid="google-calendar-error" className="text-red-500 text-sm mt-2">
             {error}
           </div>
         )}
