@@ -113,14 +113,6 @@ export default function AdminPage() {
                 Certificate Form
               </Link>
             </li>
-            <li>
-              <Link 
-                href="/admin/certificate/server" 
-                className="text-blue-600 hover:text-blue-800 transition-colors duration-200"
-              >
-                Server-side Certificate Form
-              </Link>
-            </li>
           </ul>
         </div>
       </div>
