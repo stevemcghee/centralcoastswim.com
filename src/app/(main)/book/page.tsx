@@ -33,7 +33,7 @@ export default function Book() {
             <h2 className="text-2xl font-semibold mb-4">How to Book</h2>
             <ol className="list-decimal pl-6 space-y-2 text-gray-600">
               <li>Review the calendar below to find an available session and time</li>
-              <li>Email or text Andria at <a href="mailto:andria@centralcoastswim.com" className="text-blue-600 hover:text-blue-800">andria@centralcoastswim.com</a> or <a href="tel:+19253302184" className="text-blue-600 hover:text-blue-800">(925) 330-2184</a></li>
+              <li>Text Andria at <a href="tel:+19253302184" className="text-blue-600 hover:text-blue-800">(925) 330-2184</a></li>
               <li>Include your preferred session and time in your message</li>
               <li>Andria will confirm your booking and provide any additional details</li>
             </ol>
