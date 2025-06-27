@@ -10,14 +10,51 @@ export default function Book() {
           <div className="mb-8">
             <h2 className="text-2xl font-semibold mb-4">Available Sessions</h2>
             <div className="bg-blue-50 p-4 rounded-lg mb-6">
-              <ul className="list-none space-y-2 text-gray-700">
-                <li className="flex items-center">
-                  <span className="font-semibold mr-2">Session 1:</span>
-                  May 19th - May 29th, 2025
+              <ul className="list-none text-gray-700">
+                <li className="line-through">
+                  <div className="flex items-center">
+                    <span className="font-semibold mr-2">Session 1:</span>
+                  </div>
+                  <div className="ml-20">
+                    <div>May 19, 20, 21, 22</div>
+                    <div>May 26, 27, 28, 29</div>
+                  </div>
                 </li>
-                <li className="flex items-center">
-                  <span className="font-semibold mr-2">Session 2:</span>
-                  June 2nd - June 12th, 2025
+                <li className="line-through mt-2">
+                  <div className="flex items-center">
+                    <span className="font-semibold mr-2">Session 2:</span>
+                  </div>
+                  <div className="ml-20">
+                    <div>June 2, 3, 4, 5</div>
+                    <div>June 9, 10, 11, 12</div>
+                  </div>
+                </li>
+                <li className="line-through mt-2">
+                  <div className="flex items-center">
+                    <span className="font-semibold mr-2">Session 3:</span>
+                  </div>
+                  <div className="ml-20">
+                    <div>June 16, 17, 18, 19</div>
+                    <div>June 23, 24, 25, 26</div>
+                  </div>
+                </li>
+                <li className="mt-2">
+                  <div className="flex items-center">
+                    <span className="font-semibold mr-2">Session 4:</span>
+                  </div>
+                  <div className="ml-20">
+                    <div>July 7, 8, 9, 10</div>
+                    <div>July 14, 15, 16, 17</div>
+                  </div>
+                </li>
+                <li className="mt-2">
+                  <div className="flex items-center">
+                    <span className="font-semibold mr-2">Session 5:</span>
+                  </div>
+                  <div className="ml-20">
+                    <div>July 21, 22, 23, 24</div>
+                    <div>July 28, 29, 30, 31</div>
+                  </div>
                 </li>
               </ul>
               <p className="text-gray-700 mt-3 italic">
