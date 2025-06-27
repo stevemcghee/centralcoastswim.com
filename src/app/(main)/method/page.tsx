@@ -77,7 +77,7 @@ export default function Method() {
               </p>
               <h4 className="font-semibold mb-2">Program Details:</h4>
               <ul className="list-disc list-inside text-gray-600 space-y-1">
-                <li>$175 per student</li>
+                <li>$200 per student</li>
                 <li>One teacher to 3 kids</li>
                 <li>Adult and child classes limited to 3 students</li>
                 <li>Private lessons available at $525 (one-on-one)</li>
