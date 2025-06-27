@@ -34,7 +34,15 @@ export default function Book() {
             <ol className="list-decimal pl-6 space-y-2 text-gray-600">
               <li>Review the calendar below to find an available session and time</li>
               <li>Text Andria at <a href="tel:+19253302184" className="text-blue-600 hover:text-blue-800">(925) 330-2184</a></li>
-              <li>Include your preferred session and time in your message</li>
+              <li>Include the following information in your message:
+                <ul className="list-disc pl-6">
+                  <li>Preferred session</li>
+                  <li>Preferred time</li>
+                  <li>Child's name</li>
+                  <li>Child's age</li>
+                  <li>Child's swimming experience</li>
+                </ul>
+              </li>
               <li>Andria will confirm your booking and provide any additional details</li>
             </ol>
           </div>
