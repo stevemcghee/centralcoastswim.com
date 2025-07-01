@@ -11,6 +11,7 @@ const defaultAchievements = [
   'You can swim freestyle',
   'You can swim breaststroke',
   'You can swim backstroke',
+  'You can swim butterfly',
   'You can dive into a pool safely',
 ];
 
