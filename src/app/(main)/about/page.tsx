@@ -16,11 +16,14 @@ export default function About() {
             <h2 className="text-2xl font-semibold mb-4">Our Pool</h2>
             <p className="text-gray-600 mb-4">
               Our cozy backyard pool offers a perfect setting for learning to swim. The pool is heated for comfort, 
-              and we maintain a warm, welcoming atmosphere that helps students feel at ease. Parents can relax in our 
-              comfortable seating area while watching their children's progress.
+              and we maintain a warm, welcoming atmosphere that helps students feel at ease. We're proud to feature 
+              the revolutionary Slipstream™ portable swimming machine that transforms our pool into an endless swim 
+              lane for advanced technique training. Parents can relax in our comfortable seating area while watching 
+              their children's progress.
             </p>
             <ul className="list-disc list-inside text-gray-600 space-y-2">
               <li>Heated backyard pool</li>
+              <li>Slipstream™ portable swimming machine</li>
               <li>Comfortable seating for parents</li>
               <li>Family-friendly environment</li>
             </ul>
@@ -89,10 +92,10 @@ export default function About() {
             <div>
               <h3 className="font-semibold mb-2">For Intermediate Swimmers</h3>
               <ul className="list-disc list-inside text-gray-600 space-y-1">
-                <li>Basic stroke development</li>
+                <li>Advanced stroke development</li>
+                <li>Slipstream technique training</li>
                 <li>Building swimming confidence</li>
                 <li>Water games and activities</li>
-                <li>Fun swimming skills</li>
               </ul>
             </div>
           </div>

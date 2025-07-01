@@ -90,13 +90,15 @@ export default function Home() {
             </div>
             <h3 className="text-2xl font-semibold mb-4 text-center">Get Better at Swimming</h3>
             <p className="text-gray-600 mb-4">
-              Individual lessons for all ages featuring our innovative jet system. Perfect for those who want to 
-              refine their technique or learn proper swimming fundamentals in a low-stress environment.
+              Individual lessons for all ages featuring our innovative Slipstream™ portable swimming machine. This 
+              revolutionary technology transforms our pool into an endless swim lane, creating a powerful yet smooth 
+              current that allows our instructors to observe and perfect your stroke technique in real-time. Perfect 
+              for those who want to refine their technique or learn proper swimming fundamentals in a low-stress environment.
             </p>
             <ul className="text-gray-600 space-y-2 mb-6">
               <li>• One-on-one coaching</li>
-              <li>• State-of-the-art jet system</li>
-              <li>• Technique-focused training</li>
+              <li>• Slipstream™ portable swimming machine</li>
+              <li>• Real-time stroke analysis</li>
               <li>• All ages welcome</li>
             </ul>
             <Link

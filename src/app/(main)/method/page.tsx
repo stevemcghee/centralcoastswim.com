@@ -66,6 +66,69 @@ export default function Method() {
           </div>
         </div>
 
+        <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-lg p-8 mb-12">
+          <h2 className="text-2xl font-semibold mb-6">Innovative Teaching Technology</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div>
+              <h3 className="text-xl font-semibold mb-4 text-blue-600">Slipstream™ Portable Swimming Machine</h3>
+              <p className="text-gray-600 mb-4">
+                We're proud to feature the revolutionary Slipstream™ portable swimming machine that transforms 
+                our pool into an endless swim lane! This innovative technology creates a powerful yet smooth 
+                current in the water, allowing our instructors to observe students swimming in place - just like 
+                a treadmill for the pool!
+              </p>
+              <p className="text-gray-600 mb-4">
+                The Slipstream™ system provides several key benefits for our students:
+              </p>
+              <ul className="list-disc list-inside text-gray-600 space-y-2 mb-4">
+                <li>Perfect for stroke technique analysis and correction</li>
+                <li>Allows instructors to observe swimming form from multiple angles</li>
+                <li>Creates a controlled environment for focused practice</li>
+                <li>Ideal for building endurance and refining swimming mechanics</li>
+                <li>Great for all skill levels, from beginners to advanced swimmers</li>
+                <li>Portable and installs in seconds - no permanent installation required</li>
+              </ul>
+              <p className="text-gray-600">
+                This technology is particularly valuable for our individual lessons and technique-focused 
+                training sessions, giving us an edge in providing precise, personalized instruction.
+              </p>
+            </div>
+            <div className="space-y-6">
+              <div className="bg-white p-6 rounded-lg shadow-sm">
+                <h4 className="font-semibold mb-3 text-blue-600">How It Works</h4>
+                <p className="text-gray-600 mb-3">
+                  The Slipstream™ creates a powerful yet smooth current with up to 3,000 GPM flow rate. 
+                  This allows our instructors to:
+                </p>
+                <ul className="list-disc list-inside text-gray-600 space-y-1">
+                  <li>Observe stroke mechanics in real-time</li>
+                  <li>Provide immediate feedback and corrections</li>
+                  <li>Focus on specific aspects of swimming technique</li>
+                  <li>Build strength and endurance efficiently</li>
+                </ul>
+                <div className="mt-4 p-3 bg-blue-50 rounded-lg">
+                  <h5 className="font-semibold text-blue-600 mb-2">Slipstream™ Specifications:</h5>
+                  <ul className="text-sm text-gray-600 space-y-1">
+                    <li>• Top Swim Speed: 1:20 hundred yard pace</li>
+                    <li>• Swim Range: 2.5+ miles per battery charge</li>
+                    <li>• Max Flow: 3,000 GPM</li>
+                    <li>• Portable & rechargeable</li>
+                  </ul>
+                </div>
+              </div>
+              <div className="relative h-48 bg-white rounded-lg shadow-sm overflow-hidden">
+                <Image
+                  src="/images/slipstream-jet.png"
+                  alt="Slipstream portable swimming machine"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-contain p-4"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div className="bg-blue-50 rounded-lg p-6 mb-12">
           <h2 className="text-2xl font-semibold mb-4">Our Programs</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
