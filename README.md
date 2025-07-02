@@ -194,4 +194,14 @@ For questions about the website or swimming lessons:
 
 ---
 
-*Built with ❤️ for the Central Coast swimming community* # Test deployment 2
+*Built with ❤️ for the Central Coast swimming community*
+
+## 🚀 Preview Deployment Test
+
+**Test #3** - Testing GitHub Actions preview deployment pipeline - Last updated: `new Date().toISOString()}`
+
+This test change validates that:
+- ✅ PR preview deployment works correctly
+- ✅ Firebase Hosting preview channels are functioning
+- ✅ GitHub Actions workflow triggers on PR creation/updates
+- ✅ Preview URLs are generated and accessible
