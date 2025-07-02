@@ -66,6 +66,66 @@ export default function Method() {
           </div>
         </div>
 
+        <div className="bg-blue-50 rounded-lg p-6 mb-12">
+          <h2 className="text-2xl font-semibold mb-4">Our Programs</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-white p-6 rounded-lg">
+              <h3 className="text-xl font-semibold mb-3 text-blue-600">8-Day Program</h3>
+              <p className="text-gray-600 mb-4">
+                Our comprehensive 8-day program runs Monday through Thursday for 2 weeks, providing 
+                consistent and predictable learning opportunities.
+              </p>
+              <h4 className="font-semibold mb-2">Program Details:</h4>
+              <ul className="list-disc list-inside text-gray-600 space-y-1">
+                <li>$200 per student</li>
+                <li>One teacher to 3 kids</li>
+                <li>Adult and child classes limited to 3 students</li>
+                <li>Private lessons available at $525 (one-on-one)</li>
+                <li>30-minute classes</li>
+                <li>Morning and afternoon sessions available</li>
+              </ul>
+            </div>
+            <div className="bg-white p-6 rounded-lg">
+              <h3 className="text-xl font-semibold mb-3 text-blue-600">Single Lessons</h3>
+              <p className="text-gray-600 mb-4">
+                Available for children needing a confidence boost or extra practice with specific skills, 
+                or for adults who prefer one-day lessons.
+              </p>
+              <h4 className="font-semibold mb-2">Lesson Options:</h4>
+              <ul className="list-disc list-inside text-gray-600 space-y-1">
+                <li>$25 - 1 teacher to 3 kids</li>
+                <li>$75 - 1 teacher to 1 student</li>
+                <li>Perfect for skill refinement</li>
+                <li>Great for confidence building</li>
+                <li>Flexible scheduling</li>
+                <li>Personalized attention</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-white p-6 rounded-lg shadow-sm mb-12">
+          <h2 className="text-2xl font-semibold mb-4">Class Schedule</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <h3 className="text-xl font-semibold mb-3 text-blue-600">Morning Sessions</h3>
+              <ul className="list-disc list-inside text-gray-600 space-y-1">
+                <li>10:00 AM</li>
+                <li>10:45 AM</li>
+                <li>11:30 AM</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold mb-3 text-blue-600">Afternoon Sessions</h3>
+              <ul className="list-disc list-inside text-gray-600 space-y-1">
+                <li>2:30 PM</li>
+                <li>3:15 PM</li>
+                <li>4:00 PM</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
         <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-lg p-8 mb-12">
           <h2 className="text-2xl font-semibold mb-6">Innovative Teaching Technology</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
@@ -125,66 +185,6 @@ export default function Method() {
                   className="object-contain p-4"
                 />
               </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="bg-blue-50 rounded-lg p-6 mb-12">
-          <h2 className="text-2xl font-semibold mb-4">Our Programs</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-white p-6 rounded-lg">
-              <h3 className="text-xl font-semibold mb-3 text-blue-600">8-Day Program</h3>
-              <p className="text-gray-600 mb-4">
-                Our comprehensive 8-day program runs Monday through Thursday for 2 weeks, providing 
-                consistent and predictable learning opportunities.
-              </p>
-              <h4 className="font-semibold mb-2">Program Details:</h4>
-              <ul className="list-disc list-inside text-gray-600 space-y-1">
-                <li>$200 per student</li>
-                <li>One teacher to 3 kids</li>
-                <li>Adult and child classes limited to 3 students</li>
-                <li>Private lessons available at $525 (one-on-one)</li>
-                <li>30-minute classes</li>
-                <li>Morning and afternoon sessions available</li>
-              </ul>
-            </div>
-            <div className="bg-white p-6 rounded-lg">
-              <h3 className="text-xl font-semibold mb-3 text-blue-600">Single Lessons</h3>
-              <p className="text-gray-600 mb-4">
-                Available for children needing a confidence boost or extra practice with specific skills, 
-                or for adults who prefer one-day lessons.
-              </p>
-              <h4 className="font-semibold mb-2">Lesson Options:</h4>
-              <ul className="list-disc list-inside text-gray-600 space-y-1">
-                <li>$25 - 1 teacher to 3 kids</li>
-                <li>$75 - 1 teacher to 1 student</li>
-                <li>Perfect for skill refinement</li>
-                <li>Great for confidence building</li>
-                <li>Flexible scheduling</li>
-                <li>Personalized attention</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div className="bg-white p-6 rounded-lg shadow-sm mb-12">
-          <h2 className="text-2xl font-semibold mb-4">Class Schedule</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <h3 className="text-xl font-semibold mb-3 text-blue-600">Morning Sessions</h3>
-              <ul className="list-disc list-inside text-gray-600 space-y-1">
-                <li>10:00 AM</li>
-                <li>10:45 AM</li>
-                <li>11:30 AM</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-xl font-semibold mb-3 text-blue-600">Afternoon Sessions</h3>
-              <ul className="list-disc list-inside text-gray-600 space-y-1">
-                <li>2:30 PM</li>
-                <li>3:15 PM</li>
-                <li>4:00 PM</li>
-              </ul>
             </div>
           </div>
         </div>
