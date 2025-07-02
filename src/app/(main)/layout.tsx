@@ -71,7 +71,7 @@ export default function MainLayout({
             </div>
           </div>
           <div className="text-center mt-8 pt-8 border-t border-gray-700">
-            <p>© 2024 Central Coast Swim. All rights reserved.</p>
+            <p>© 2025 Central Coast Swim. All rights reserved.</p>
           </div>
         </div>
       </footer>
