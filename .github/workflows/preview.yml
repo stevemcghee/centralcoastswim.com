@@ -63,6 +63,22 @@ jobs:
           ref: gh-pages
           path: gh-pages
           token: ${{ secrets.GITHUB_TOKEN }}
+        continue-on-error: true
+      
+      - name: Create gh-pages branch if it doesn't exist
+        run: |
+          if [ ! -d "gh-pages" ]; then
+            git checkout --orphan gh-pages
+            git rm -rf .
+            echo "# GitHub Pages" > README.md
+            git add README.md
+            git config user.name github-actions
+            git config user.email github-actions@github.com
+            git commit -m "Initialize gh-pages branch"
+            git push origin gh-pages
+            cd ..
+            git clone --branch gh-pages https://github.com/${{ github.repository }}.git gh-pages
+          fi
       
       - name: Download preview artifact
         uses: actions/download-artifact@v4
@@ -74,7 +90,7 @@ jobs:
         run: |
           cd gh-pages
           # Pull latest changes to avoid conflicts
-          git pull origin gh-pages
+          git pull origin gh-pages || true
           rm -rf preview
           cp -r ../preview-build/preview ./
           
