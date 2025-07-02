@@ -2,93 +2,103 @@
 
 ## Summary
 
-Your GitHub Actions workflows have been properly configured for the **GitHub Actions deployment method**. The workflow now uses GitHub's native deployment infrastructure instead of the gh-pages branch.
+Your GitHub Actions workflows have been **fully migrated to the GitHub Actions deployment method**. Both production and PR preview deployments now use GitHub Actions instead of the gh-pages branch approach.
 
 ## Changes Made
 
-### 1. Fixed `deploy.yml` Workflow
+### 1. Production Deployment (`deploy.yml`) ✅
+**Already correctly configured** for GitHub Actions method:
+- Uses `actions/configure-pages@v4`, `actions/upload-pages-artifact@v3`, `actions/deploy-pages@v4`
+- Proper permissions: `pages: write`, `id-token: write`, `contents: read`
+- Uses `github-pages` environment
 
-**Problem:** The original workflow was mixing deployment methods incorrectly.
+### 2. Updated PR Preview Deployment (`preview.yml`) ✅
+**Migrated from gh-pages branch to GitHub Actions + Surge.sh:**
 
-**Solution:** Configured proper GitHub Actions deployment method.
+**Previous Issues:**
+- Used gh-pages branch checkout and manipulation
+- Required `contents: write` permission
+- Mixed deployment methods
 
-**Key Changes:**
-- **Updated permissions:** Added `pages: write` and `id-token: write`, changed `contents: write` to `contents: read`
-- **Separated jobs:** Split into `build` and `deploy` jobs for better workflow structure
-- **Added proper steps:**
-  - `actions/configure-pages@v4` - Sets up GitHub Pages configuration
-  - `actions/upload-pages-artifact@v3` - Uploads the build artifact
-  - `actions/deploy-pages@v4` - Deploys from the artifact
-- **Added environment:** Uses `github-pages` environment for deployment
+**New Solution:**
+- **Uses GitHub Actions** for build and deployment process
+- **Deploys to Surge.sh** for isolated PR previews
+- **Eliminates gh-pages branch usage** completely
+- Uses only `contents: read` and `pull-requests: write` permissions
+- Each PR gets its own URL: `https://pr-{number}-{owner}-{repo}.surge.sh`
 
-### 2. Current Workflow Structure
+### 3. Updated Cleanup (`cleanup-preview.yml`) ✅
+**Migrated from gh-pages branch to Surge.sh management:**
+- Removes Surge.sh deployments instead of gh-pages branch manipulation
+- Uses `surge teardown` command
+- No longer requires `contents: write` permission
 
-Your workflows now implement:
+## Required Setup
 
-1. **`deploy.yml`** - Production deployment using GitHub Actions method
-2. **`preview.yml`** - PR preview deployments to gh-pages branch `/preview` directory
-3. **`cleanup-preview.yml`** - Cleanup preview deployments when PRs close
-
-*Note: Preview deployments still use gh-pages branch method, which is a common pattern to separate production and preview deployments.*
-
-## GitHub Pages Settings Required
-
-To complete the GitHub Actions deployment setup, ensure your GitHub repository settings are configured:
-
+### GitHub Pages Settings (Production)
 1. Go to **Settings > Pages** in your GitHub repository
 2. Set **Source** to: **GitHub Actions**
-3. No branch selection needed (GitHub Actions handles deployment)
+3. No branch selection needed
+
+### Surge.sh Setup (PR Previews)
+1. **Create Surge.sh account** at [surge.sh](https://surge.sh)
+2. **Get Surge token:**
+   ```bash
+   npm install -g surge
+   surge login
+   surge token
+   ```
+3. **Add GitHub secret:**
+   - Go to repository **Settings > Secrets and variables > Actions**
+   - Add new secret: `SURGE_TOKEN` with your Surge token value
 
 ## How It Works
 
 ### Production Deployment (main branch):
-1. **Build Job:**
-   - Checks out code
-   - Sets up Node.js
-   - Installs dependencies
-   - Optimizes images
-   - Builds Next.js static site
-   - Configures Pages settings
-   - Uploads build artifact
+1. **Build Job:** Builds Next.js static site
+2. **Deploy Job:** Deploys to GitHub Pages using GitHub Actions infrastructure
+3. **Result:** Available at your GitHub Pages URL
 
-2. **Deploy Job:**
-   - Downloads the build artifact
-   - Deploys to GitHub Pages using GitHub Actions infrastructure
-
-### Preview Deployments (PRs):
-- Still uses gh-pages branch method for isolated previews
-- Creates `/preview` directory for PR previews
-- Comments on PRs with preview URLs
-- Cleans up when PRs are closed
+### PR Preview Deployments:
+1. **Build:** Uses GitHub Actions to build PR code
+2. **Deploy:** Uses GitHub Actions to deploy to Surge.sh
+3. **Result:** Each PR gets unique URL: `https://pr-{number}-{owner}-{repo}.surge.sh`
+4. **Cleanup:** Automatically removes Surge deployment when PR closes
 
 ## Benefits of This Setup
 
-- ✅ **Native GitHub integration** - Uses GitHub's deployment infrastructure
-- ✅ **Better security** - Minimal permissions, no branch access needed
-- ✅ **Artifact-based deployment** - Clean separation of build and deploy
-- ✅ **Environment protection** - Uses `github-pages` environment
-- ✅ **PR previews** - Separate preview system using gh-pages
-- ✅ **Automatic cleanup** - Preview deployments are removed when PRs close
+- ✅ **Fully GitHub Actions method** - No gh-pages branch usage anywhere
+- ✅ **Consistent deployment approach** - GitHub Actions for everything
+- ✅ **Better security** - Minimal permissions throughout
+- ✅ **Isolated PR previews** - Each PR gets its own domain
+- ✅ **Automatic cleanup** - Surge deployments removed when PRs close
+- ✅ **No conflicts** - PR previews don't interfere with production site
+- ✅ **Industry standard** - Surge.sh is widely used for PR previews
 
-## Verification
+## Why Surge.sh for PR Previews?
 
-Your setup is now properly configured for GitHub Actions deployment method. The next deployment to `main` will:
-1. Build your site in the build job
-2. Upload the build as an artifact
-3. Deploy the artifact using GitHub Actions
-4. Be served by GitHub Pages
+GitHub Pages with GitHub Actions method is designed for single-site deployment. Using Surge.sh for PR previews allows us to:
+- Maintain GitHub Actions consistency
+- Avoid overwriting the production site
+- Provide isolated preview environments
+- Use a service designed for temporary deployments
+
+## URLs
+
+- **Production:** Your GitHub Pages URL (e.g., `https://username.github.io/repo`)
+- **PR Previews:** `https://pr-{number}-{owner}-{repo}.surge.sh`
 
 ## Next Steps
 
-1. **Verify GitHub Pages settings:** Ensure "Source" is set to "GitHub Actions"
-2. **Test deployment:** Push a commit to `main` branch
-3. **Check deployment:** Verify the site deploys correctly using GitHub Actions
-4. **Monitor workflow:** Check the Actions tab for successful deployment runs
+1. **Set up Surge.sh token** as described above
+2. **Verify GitHub Pages settings** are set to "GitHub Actions"
+3. **Test with a PR** to verify preview deployment works
+4. **Monitor workflows** in the Actions tab
 
 ## Technical Details
 
-- **Deployment method:** GitHub Actions (not deploy from branch)
+- **Production deployment:** GitHub Actions → GitHub Pages
+- **PR preview deployment:** GitHub Actions → Surge.sh
 - **Build output:** `./out` directory from Next.js static export
-- **Artifact upload:** Uses `actions/upload-pages-artifact@v3`
-- **Deployment:** Uses `actions/deploy-pages@v4`
-- **Environment:** `github-pages` with deployment URL output
+- **Permissions:** Minimal required permissions only
+- **No gh-pages branch usage:** Completely eliminated
