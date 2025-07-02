@@ -13,7 +13,7 @@ Your GitHub Actions workflows have been **fully migrated to the GitHub Actions d
 - Uses `github-pages` environment
 
 ### 2. Updated PR Preview Deployment (`preview.yml`) ✅
-**Migrated from gh-pages branch to GitHub Actions + modern hosting:**
+**Migrated from gh-pages branch to GitHub Actions + Firebase Hosting:**
 
 **Previous Issues:**
 - Used gh-pages branch checkout and manipulation
@@ -22,89 +22,44 @@ Your GitHub Actions workflows have been **fully migrated to the GitHub Actions d
 
 **New Solution:**
 - **Uses GitHub Actions** for build and deployment process
-- **Multiple hosting options available** for isolated PR previews
+- **Deploys to Firebase Hosting** using preview channels for isolated PR previews
 - **Eliminates gh-pages branch usage** completely
 - Uses only `contents: read` and `pull-requests: write` permissions
-- Each PR gets its own URL
+- Each PR gets its own URL: `https://{project-id}--pr-{number}.web.app`
 
 ### 3. Updated Cleanup (`cleanup-preview.yml`) ✅
-**Migrated from gh-pages branch to modern hosting management:**
-- Removes deployments using hosting service APIs
+**Migrated from gh-pages branch to Firebase auto-expiration:**
+- Firebase preview channels automatically expire after 30 days
+- No manual cleanup needed - Firebase handles it automatically
 - Uses minimal permissions
 - No longer requires `contents: write` permission
 
-## PR Preview Hosting Options
+## Required Setup - Firebase Hosting
 
-Choose one of these excellent alternatives:
+### **Step 1: Create Firebase Project**
+1. Go to [Firebase Console](https://console.firebase.google.com/)
+2. Click **"Create a project"** or **"Add project"**
+3. Enter your project name (e.g., `your-app-preview`)
+4. Optionally enable Google Analytics
+5. Click **"Create project"**
 
-### **Option 1: Netlify** 🌟 **Most Popular**
-- **Pros:** Excellent GitHub integration, generous free tier, form handling, edge functions
-- **Cons:** Can get expensive with high traffic
-- **URL Pattern:** `https://pr-{number}--{site-name}.netlify.app`
+### **Step 2: Enable Firebase Hosting**
+1. In your Firebase project dashboard, click **"Hosting"** in the left sidebar
+2. Click **"Get started"**
+3. Follow the setup wizard (you can skip the Firebase CLI installation for now)
 
-**Required Secrets:**
-- `NETLIFY_AUTH_TOKEN` - Personal access token from Netlify
-- `NETLIFY_SITE_ID` - Site ID from Netlify dashboard
-- `NETLIFY_SITE_NAME` - Your Netlify site name
+### **Step 3: Create Service Account**
+1. Go to **Project Settings** (gear icon) → **Service accounts**
+2. Click **"Generate new private key"**
+3. Save the JSON file securely - you'll need this for GitHub secrets
 
-**Setup:**
-1. Create Netlify account and site
-2. Generate personal access token
-3. Add secrets to GitHub repository
+### **Step 4: Add GitHub Secrets**
+Go to your GitHub repository **Settings > Secrets and variables > Actions** and add:
 
-### **Option 2: Vercel** 🌟 **Best for Next.js**
-- **Pros:** Excellent Next.js optimization, edge functions, great DX
-- **Cons:** Pricing can add up, more complex for non-Next.js projects
-- **URL Pattern:** `https://pr-{number}-{repo}.vercel.app`
+- **`FIREBASE_SERVICE_ACCOUNT`**: Paste the entire contents of the JSON file from Step 3
+- **`FIREBASE_PROJECT_ID`**: Your Firebase project ID (found in Firebase Console project settings)
 
-**Required Secrets:**
-- `VERCEL_TOKEN` - Vercel API token
-- `VERCEL_ORG_ID` - Organization ID from Vercel
-- `VERCEL_PROJECT_ID` - Project ID from Vercel
-
-**Setup:**
-1. Create Vercel account and project
-2. Get API token and IDs from Vercel dashboard
-3. Add secrets to GitHub repository
-
-### **Option 3: Firebase Hosting** 🌟 **Google's Solution**
-- **Pros:** Great performance, tight Google Cloud integration, preview channels
-- **Cons:** Requires Google account, more complex setup
-- **URL Pattern:** `https://{project-id}--pr-{number}.web.app`
-
-**Required Secrets:**
-- `FIREBASE_SERVICE_ACCOUNT` - Service account JSON
-- `FIREBASE_PROJECT_ID` - Firebase project ID
-
-**Setup:**
-1. Create Firebase project
-2. Enable Hosting
-3. Create service account with Hosting Admin role
-4. Add secrets to GitHub repository
-
-### **Option 4: Cloudflare Pages** 🌟 **Fast & Global**
-- **Pros:** Excellent performance, global CDN, generous free tier
-- **Cons:** Less mature ecosystem than others
-- **URL Pattern:** `https://pr-{number}.{project}.pages.dev`
-
-**Required Secrets:**
-- `CLOUDFLARE_API_TOKEN` - API token with Pages permissions
-- `CLOUDFLARE_ACCOUNT_ID` - Account ID from Cloudflare
-- `CLOUDFLARE_PROJECT_NAME` - Pages project name
-
-**Setup:**
-1. Create Cloudflare account
-2. Create Pages project
-3. Generate API token with Pages permissions
-4. Add secrets to GitHub repository
-
-### **Option 5: Surge.sh** (Current) 💡 **Simple & Free**
-- **Pros:** Simple setup, completely free, great for small projects
-- **Cons:** Basic features, limited customization
-- **URL Pattern:** `https://pr-{number}-{owner}-{repo}.surge.sh`
-
-## Required GitHub Pages Setup (Production)
-
+### **Step 5: Required GitHub Pages Setup (Production)**
 1. Go to **Settings > Pages** in your GitHub repository
 2. Set **Source** to: **GitHub Actions**
 3. No branch selection needed
@@ -118,9 +73,9 @@ Choose one of these excellent alternatives:
 
 ### PR Preview Deployments:
 1. **Build:** Uses GitHub Actions to build PR code
-2. **Deploy:** Uses GitHub Actions to deploy to chosen hosting service
-3. **Result:** Each PR gets unique URL based on chosen service
-4. **Cleanup:** Automatically removes deployment when PR closes
+2. **Deploy:** Uses GitHub Actions to deploy to Firebase Hosting preview channel
+3. **Result:** Each PR gets unique URL: `https://{project-id}--pr-{number}.web.app`
+4. **Cleanup:** Automatically expires after 30 days
 
 ## Benefits of This Setup
 
@@ -128,46 +83,45 @@ Choose one of these excellent alternatives:
 - ✅ **Consistent deployment approach** - GitHub Actions for everything
 - ✅ **Better security** - Minimal permissions throughout
 - ✅ **Isolated PR previews** - Each PR gets its own domain
-- ✅ **Automatic cleanup** - Deployments removed when PRs close
+- ✅ **Automatic cleanup** - Firebase handles expiration automatically
 - ✅ **No conflicts** - PR previews don't interfere with production site
-- ✅ **Industry standard** - All options are widely used for PR previews
-- ✅ **Choice** - Pick the hosting service that fits your needs and budget
+- ✅ **Industry standard** - Firebase Hosting is widely used and reliable
+- ✅ **Great performance** - Firebase's global CDN ensures fast loading
 
-## Switching Between Options
+## Why Firebase Hosting for PR Previews?
 
-To switch between hosting options:
-1. **Replace** your `preview.yml` with the desired option's workflow
-2. **Update** GitHub secrets with the new service's requirements  
-3. **Update** cleanup workflow if needed
-4. **Test** with a new PR
-
-Example workflows are provided as `.example` files in your `.github/workflows/` directory.
-
-## Why These Alternatives?
-
-GitHub Pages with GitHub Actions method is designed for single-site deployment. Using these hosting services for PR previews allows us to:
-- Maintain GitHub Actions consistency
-- Avoid overwriting the production site
-- Provide isolated preview environments
-- Use services designed for temporary/preview deployments
+Firebase Hosting with preview channels is specifically designed for this use case:
+- **Preview channels** - Built for temporary preview deployments
+- **Automatic expiration** - No manual cleanup needed
+- **GitHub integration** - Official Firebase GitHub Action
+- **Performance** - Global CDN and optimized delivery
+- **Reliability** - Google's infrastructure
 
 ## URLs
 
 - **Production:** Your GitHub Pages URL (e.g., `https://username.github.io/repo`)
-- **PR Previews:** Varies by chosen hosting service (see options above)
+- **PR Previews:** `https://{firebase-project-id}--pr-{number}.web.app`
+
+## File Added
+
+- **`firebase.json`** - Configuration file for Firebase Hosting that specifies:
+  - Build directory (`out`)
+  - Rewrite rules for single-page application routing
+  - Cache headers for static assets
 
 ## Next Steps
 
-1. **Choose your preferred hosting option** from the alternatives above
-2. **Set up the required secrets** for your chosen service
-3. **Replace your preview workflow** with the chosen option
+1. **Complete Firebase setup** as described above
+2. **Add the two required GitHub secrets**
+3. **Verify GitHub Pages settings** are set to "GitHub Actions"
 4. **Test with a PR** to verify preview deployment works
 5. **Monitor workflows** in the Actions tab
 
 ## Technical Details
 
 - **Production deployment:** GitHub Actions → GitHub Pages
-- **PR preview deployment:** GitHub Actions → Chosen hosting service
+- **PR preview deployment:** GitHub Actions → Firebase Hosting (preview channels)
 - **Build output:** `./out` directory from Next.js static export
 - **Permissions:** Minimal required permissions only
+- **Preview expiration:** 30 days (configurable)
 - **No gh-pages branch usage:** Completely eliminated
