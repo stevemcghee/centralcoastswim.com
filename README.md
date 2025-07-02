@@ -191,7 +191,6 @@ For questions about the website or swimming lessons:
 
 - **Website**: [www.centralcoastswim.com](https://centralcoastswim.com)
 - **Email**: info@centralcoastswim.com
-- **Phone**: (555) 123-4567
 
 ---
 
