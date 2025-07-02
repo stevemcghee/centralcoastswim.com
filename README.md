@@ -194,4 +194,4 @@ For questions about the website or swimming lessons:
 
 ---
 
-*Built with ❤️ for the Central Coast swimming community* # Test deployment
+*Built with ❤️ for the Central Coast swimming community* # Test deployment 2
