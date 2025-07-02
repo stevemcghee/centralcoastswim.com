@@ -5,6 +5,10 @@ import Image from 'next/image'
 export default function Home() {
   return (
     <div className="space-y-16">
+      {/* Test Preview Banner - Remove after testing */}
+      <div className="bg-green-500 text-white text-center py-2 px-4">
+        <p className="font-semibold">🚀 Testing Preview Deployment Pipeline - {new Date().toLocaleDateString()}</p>
+      </div>
       {/* Hero Section */}
       <section className="relative min-h-[600px] flex items-center">
         <div className="absolute inset-0 bg-blue-900/50 z-10" />
