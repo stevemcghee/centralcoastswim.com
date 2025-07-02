@@ -7,8 +7,6 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
   pull-requests: write
 
 concurrency:
@@ -16,10 +14,10 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build-preview:
+  build-and-deploy-preview:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout PR
         uses: actions/checkout@v4
         with:
           ref: ${{ github.event.pull_request.head.sha }}
@@ -36,99 +34,48 @@ jobs:
       - name: Optimize images
         run: node scripts/optimize-images.js
       
-      - name: Build with Next.js for Preview
+      - name: Build PR preview
         run: npm run build:preview
         env:
-          NEXT_PUBLIC_BASE_PATH: /preview
+          NEXT_PUBLIC_BASE_PATH: ""
       
-      - name: Create preview directory structure
-        run: |
-          mkdir -p preview-site/preview
-          cp -r ./out/* ./preview-site/preview/
-      
-      - name: Upload preview artifact
-        uses: actions/upload-artifact@v4
+      - name: Deploy to Firebase Hosting
+        uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          name: preview-site-${{ github.event.number }}
-          path: ./preview-site
-          retention-days: 7
-
-  deploy-preview:
-    runs-on: ubuntu-latest
-    needs: build-preview
-    steps:
-      - name: Checkout gh-pages
-        uses: actions/checkout@v4
-        with:
-          ref: gh-pages
-          path: gh-pages
-          token: ${{ secrets.GITHUB_TOKEN }}
-        continue-on-error: true
-      
-      - name: Create gh-pages branch if it doesn't exist
-        run: |
-          if [ ! -d "gh-pages" ]; then
-            git checkout --orphan gh-pages
-            git rm -rf .
-            echo "# GitHub Pages" > README.md
-            git add README.md
-            git config user.name github-actions
-            git config user.email github-actions@github.com
-            git commit -m "Initialize gh-pages branch"
-            git push origin gh-pages
-            cd ..
-            git clone --branch gh-pages https://github.com/${{ github.repository }}.git gh-pages
-          fi
-      
-      - name: Download preview artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: preview-site-${{ github.event.number }}
-          path: ./preview-build
-      
-      - name: Setup preview directory
-        run: |
-          cd gh-pages
-          # Pull latest changes to avoid conflicts
-          git pull origin gh-pages || true
-          rm -rf preview
-          cp -r ../preview-build/preview ./
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT }}'
+          projectId: '${{ secrets.FIREBASE_PROJECT_ID }}'
+          channelId: 'pr-${{ github.event.number }}'
+          expires: 30d
           
-      - name: Deploy to gh-pages
-        run: |
-          cd gh-pages
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          
-          # Check if there are changes to commit
-          if git diff --quiet && git diff --staged --quiet; then
-            echo "No changes to commit"
-            exit 0
-          fi
-          
-          git add preview
-          git commit -m "Deploy preview for PR #${{ github.event.number }}"
-          
-          # Retry push in case of conflicts
-          for i in {1..3}; do
-            git push origin gh-pages && break
-            echo "Push failed, retrying in 5 seconds..."
-            sleep 5
-            git pull --rebase origin gh-pages
-          done
-      
       - name: Comment on PR
         uses: actions/github-script@v7
         with:
           script: |
             const { repo, owner } = context.repo;
             const pr_number = context.issue.number;
-            const baseUrl = `https://${owner}.github.io/${repo}`;
-            const previewUrl = `${baseUrl}/preview/`;
+            const previewUrl = `https://${{ secrets.FIREBASE_PROJECT_ID }}--pr-${pr_number}.web.app`;
             
+            // Delete previous comments from this action
+            const comments = await github.rest.issues.listComments({
+              owner,
+              repo,
+              issue_number: pr_number,
+            });
+            
+            for (const comment of comments.data) {
+              if (comment.user.login === 'github-actions[bot]' && comment.body.includes('🚀 **Preview deployed!**')) {
+                await github.rest.issues.deleteComment({
+                  owner,
+                  repo,
+                  comment_id: comment.id,
+                });
+              }
+            }
+            
+            // Create new comment
             github.rest.issues.createComment({
               owner,
               repo,
               issue_number: pr_number,
-              body: `🚀 **Preview deployed!**\n\nYou can preview your changes at: ${previewUrl}\n\n*This preview will be updated automatically when you push new commits to this PR.*`
+              body: `🚀 **Preview deployed!**\n\nYou can preview your changes at: ${previewUrl}\n\n*This preview will be updated automatically when you push new commits to this PR.*\n\n**Note:** Preview is hosted on Firebase Hosting using GitHub Actions deployment method.`
             });
