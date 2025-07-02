@@ -13,6 +13,12 @@ if (!fs.existsSync(OPTIMIZED_DIR)) {
 
 async function optimizeImage(inputPath, outputPath, options) {
   try {
+    // Check if input file exists
+    if (!fs.existsSync(inputPath)) {
+      console.log(`Input file not found: ${inputPath}, skipping...`);
+      return;
+    }
+
     await sharp(inputPath)
       .resize(options.width, options.height, {
         fit: options.fit || 'inside',
@@ -27,10 +33,17 @@ async function optimizeImage(inputPath, outputPath, options) {
     console.log(`Optimized ${path.basename(inputPath)}`);
   } catch (error) {
     console.error(`Error optimizing ${path.basename(inputPath)}:`, error);
+    // Don't throw the error, just log it and continue
   }
 }
 
 async function optimizeGallery() {
+  // Check if gallery directory exists
+  if (!fs.existsSync(GALLERY_DIR)) {
+    console.log(`Gallery directory not found: ${GALLERY_DIR}, skipping gallery optimization...`);
+    return;
+  }
+
   const files = fs.readdirSync(GALLERY_DIR);
   
   for (const file of files) {
@@ -65,9 +78,15 @@ async function optimizeHero() {
 }
 
 async function optimizeAll() {
-  await optimizeGallery();
-  await optimizeHero();
-  console.log('All images optimization complete!');
+  try {
+    await optimizeGallery();
+    await optimizeHero();
+    console.log('All images optimization complete!');
+  } catch (error) {
+    console.error('Error during image optimization:', error);
+    // Exit with 0 to not fail the build if images can't be optimized
+    process.exit(0);
+  }
 }
 
 optimizeAll(); 
