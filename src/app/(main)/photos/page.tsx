@@ -5,42 +5,52 @@ const photos = [
   {
     src: '/gallery/pool-home.jpg',
     alt: 'Central Coast Swim pool',
+    caption: 'Our beautiful home pool where all the magic happens',
   },
   {
     src: '/gallery/pool-home-sunset.jpg',
     alt: 'Central Coast Swim pool at sunset',
+    caption: 'Golden hour at Central Coast Swim - a peaceful end to training',
   },
   {
     src: '/gallery/andria-hunewill-sunset.jpg',
     alt: 'Andria Hunewill at sunset',
+    caption: 'Coach Andria enjoying a beautiful sunset after a day of coaching',
   },
   {
     src: '/gallery/andria-dean-polo.jpg',
     alt: 'Andria Dean in polo',
+    caption: 'Coach Andria in her coaching polo, ready for another great session',
   },
   {
     src: '/gallery/andria-jack-madeline.jpg',
     alt: 'Andria with Jack and Madeline',
+    caption: 'Coach Andria with swimmers Jack and Madeline celebrating their progress',
   },
   {
     src: '/gallery/coach-andria.jpg',
     alt: 'Coach Andria',
+    caption: 'Coach Andria demonstrating proper technique and form',
   },
   {
     src: '/gallery/andria-tri.jpg',
     alt: 'Andria in triathlon',
+    caption: 'Coach Andria competing in triathlon - leading by example',
   },
   {
     src: '/gallery/andria-pool.jpg',
     alt: 'Andria at the pool',
+    caption: 'Coach Andria poolside, always ready to help swimmers improve',
   },
   {
     src: '/gallery/pool-night.jpg',
     alt: 'Central Coast Swim pool at night',
+    caption: 'Evening training sessions under the lights',
   },
   {
     src: '/gallery/pool-friends.jpg',
     alt: 'Friends at the pool',
+    caption: 'Building friendships and memories through swimming',
   },
 ]
 
@@ -53,17 +63,24 @@ export default function Photos() {
         {photos.map((photo, index) => (
           <div 
             key={index} 
-            className="aspect-square relative rounded-lg overflow-hidden"
+            className="bg-white rounded-lg shadow-sm overflow-hidden"
           >
-            <Image
-              src={photo.src}
-              alt={photo.alt}
-              fill
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              className="object-cover"
-              loading="lazy"
-              quality={75}
-            />
+            <div className="aspect-square relative">
+              <Image
+                src={photo.src}
+                alt={photo.alt}
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className="object-cover"
+                loading="lazy"
+                quality={75}
+              />
+            </div>
+            <div className="p-4">
+              <p className="text-gray-700 text-sm leading-relaxed">
+                {photo.caption}
+              </p>
+            </div>
           </div>
         ))}
       </div>
