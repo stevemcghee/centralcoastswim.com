@@ -195,3 +195,5 @@ For questions about the website or swimming lessons:
 ---
 
 *Built with ❤️ for the Central Coast swimming community* # Test deployment 2
+
+<!-- Test staging deployment - this is a simple change to verify PR preview functionality -->
