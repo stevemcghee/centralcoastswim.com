@@ -29,6 +29,9 @@ export default function MainLayout({
               <Link href="/about" className="hover:text-blue-200 whitespace-nowrap py-2">
                 About Us
               </Link>
+              <Link href="/coach-andria" className="hover:text-blue-200 whitespace-nowrap py-2">
+                About Coach Andria
+              </Link>
               <Link href="/photos" className="hover:text-blue-200 whitespace-nowrap py-2">
                 Photos
               </Link>
