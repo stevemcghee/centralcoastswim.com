@@ -2,6 +2,7 @@ import Link from 'next/link';
 
 // Main layout component for the Central Coast Swim website
 // This component provides the navigation and footer for all main pages
+// Test change for preview deployment
 export default function MainLayout({
   children,
 }: {
