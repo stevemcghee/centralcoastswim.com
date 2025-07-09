@@ -1,5 +1,6 @@
 import Link from 'next/link';
 
+// Main layout component for the Central Coast Swim website
 export default function MainLayout({
   children,
 }: {
