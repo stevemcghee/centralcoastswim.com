@@ -49,6 +49,9 @@ jobs:
           channelId: 'pr-${{ github.event.number }}'
           expires: 30d
       
+      - name: Install Firebase CLI
+        run: npm install -g firebase-tools
+      
       - name: Get actual preview URL
         id: preview-url
         run: |
