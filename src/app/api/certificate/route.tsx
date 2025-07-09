@@ -2,9 +2,11 @@ import { NextResponse } from 'next/server';
 import { renderToStream } from '@react-pdf/renderer';
 import { SwimCertificate } from './SwimCertificate';
 
-export async function GET(request: Request) {
+export async function GET(
+  request: Request,
+  { searchParams }: { searchParams: URLSearchParams }
+) {
   try {
-    const { searchParams } = new URL(request.url);
     const swimmerName = searchParams.get('name') || '';
     const instructorName = searchParams.get('instructor') || 'Andria McGhee';
     const date = searchParams.get('date') || new Date().toISOString().split('T')[0];
