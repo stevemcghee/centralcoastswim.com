@@ -37,11 +37,14 @@ jobs:
       - name: Build PR preview
         run: npm run build
       
+      - name: List build output
+        run: ls -la out/
+      
       - name: Deploy to Firebase Hosting
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT }}'
-          projectId: '${{ secrets.FIREBASE_PROJECT_ID }}'
+          projectId: 'central-coast-swim-preview'
           channelId: 'pr-${{ github.event.number }}'
           expires: 30d
           
@@ -51,7 +54,7 @@ jobs:
           script: |
             const { repo, owner } = context.repo;
             const pr_number = context.issue.number;
-            const previewUrl = `https://${{ secrets.FIREBASE_PROJECT_ID }}--pr-${pr_number}.web.app`;
+            const previewUrl = `https://central-coast-swim-preview--pr-${pr_number}.web.app`;
             
             // Delete previous comments from this action
             const comments = await github.rest.issues.listComments({
