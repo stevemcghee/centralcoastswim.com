@@ -49,31 +49,13 @@ jobs:
           channelId: 'pr-${{ github.event.number }}'
           expires: 30d
       
-      - name: Install Firebase CLI
-        run: npm install -g firebase-tools
-      
-      - name: Get actual preview URL
-        id: preview-url
-        run: |
-          firebase hosting:channel:list --project central-coast-swim-preview --json > channels.json || echo "{}" > channels.json
-          cat channels.json
-          CHANNEL_NAME="pr-${{ github.event.number }}"
-          ACTUAL_URL=$(cat channels.json | jq -r --arg name "$CHANNEL_NAME" '.result.channels[] | select(.name == $name) | .url' 2>/dev/null || echo "")
-          if [ -n "$ACTUAL_URL" ] && [ "$ACTUAL_URL" != "null" ]; then
-            echo "Found actual URL: $ACTUAL_URL"
-            echo "url=$ACTUAL_URL" >> $GITHUB_OUTPUT
-          else
-            echo "Could not find actual URL, using fallback"
-            echo "url=https://central-coast-swim-preview--pr-${{ github.event.number }}.web.app" >> $GITHUB_OUTPUT
-          fi
-      
       - name: Comment on PR
         uses: actions/github-script@v7
         with:
           script: |
             const { repo, owner } = context.repo;
             const pr_number = context.issue.number;
-            const previewUrl = '${{ steps.preview-url.outputs.url }}';
+            const previewUrl = '${{ steps.deploy.outputs.details_url }}';
             
             // Delete previous comments from this action
             const comments = await github.rest.issues.listComments({
