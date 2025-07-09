@@ -53,17 +53,19 @@ export default function Photos() {
         {photos.map((photo, index) => (
           <div 
             key={index} 
-            className="aspect-square relative rounded-lg overflow-hidden"
+            className="bg-white rounded-lg shadow-sm overflow-hidden"
           >
-            <Image
-              src={photo.src}
-              alt={photo.alt}
-              fill
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              className="object-cover"
-              loading="lazy"
-              quality={75}
-            />
+            <div className="aspect-square relative">
+              <Image
+                src={photo.src}
+                alt={photo.alt}
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className="object-cover"
+                loading="lazy"
+                quality={75}
+              />
+            </div>
           </div>
         ))}
       </div>
