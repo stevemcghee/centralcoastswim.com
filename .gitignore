@@ -40,3 +40,8 @@ next-env.d.ts
 # optimized images
 /public/gallery/optimized/
 /public/optimized/
+
+# firebase
+.firebase/
+firebase-debug.log
+firebase-debug.*.log
