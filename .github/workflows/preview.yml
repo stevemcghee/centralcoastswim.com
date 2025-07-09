@@ -41,6 +41,7 @@ jobs:
         run: ls -la out/
       
       - name: Deploy to Firebase Hosting
+        id: deploy
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT }}'
@@ -54,7 +55,7 @@ jobs:
           script: |
             const { repo, owner } = context.repo;
             const pr_number = context.issue.number;
-            const previewUrl = `https://central-coast-swim-preview--pr-${pr_number}.web.app`;
+            const previewUrl = '${{ steps.deploy.outputs.url }}' || `https://central-coast-swim-preview--pr-${pr_number}.web.app`;
             
             // Delete previous comments from this action
             const comments = await github.rest.issues.listComments({
