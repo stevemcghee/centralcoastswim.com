@@ -18,15 +18,30 @@ export default function AdminPage() {
     }
   }, []);
 
-  const handleLogin = (e: React.FormEvent) => {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(''); // Clear any previous errors
     
-    if (password === 'charlie') {
-      sessionStorage.setItem('adminAuth', 'true');
-      setIsAuthenticated(true);
-    } else {
-      setError('Incorrect password. Please try again.');
+    try {
+      const response = await fetch('/api/auth/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ password }),
+      });
+      
+      if (response.ok) {
+        sessionStorage.setItem('adminAuth', 'true');
+        setIsAuthenticated(true);
+      } else {
+        const data = await response.json();
+        setError(data.error || 'Authentication failed. Please try again.');
+        setPassword(''); // Clear the password field
+      }
+    } catch (error) {
+      console.error('Login error:', error);
+      setError('Network error. Please try again.');
       setPassword(''); // Clear the password field
     }
   };
