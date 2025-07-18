@@ -23,28 +23,40 @@ export default function CertificateGenerator({
   const generatePDF = async () => {
     try {
       setIsGenerating(true);
+      console.log('Starting PDF generation...');
 
       // Create a new PDF
       const pdfDoc = await PDFDocument.create();
+      console.log('PDF document created');
+      
       const pageWidth = 800;
       const pageHeight = 560;
       const page = pdfDoc.addPage([pageWidth, pageHeight]);
       const font = await pdfDoc.embedFont(StandardFonts.Helvetica);
       const fontBold = await pdfDoc.embedFont(StandardFonts.HelveticaBold);
+      console.log('Fonts embedded');
 
       // Load images
+      console.log('Loading images...');
       const [bgResponse, starResponse] = await Promise.all([
         fetch('/images/logo-wave.png'),
         fetch('/images/star.png'),
       ]);
+      
+      if (!bgResponse.ok || !starResponse.ok) {
+        throw new Error(`Failed to load images: bg=${bgResponse.status}, star=${starResponse.status}`);
+      }
+      
       const [bgBytes, starBytes] = await Promise.all([
         bgResponse.arrayBuffer(),
         starResponse.arrayBuffer(),
       ]);
+      console.log('Images loaded');
 
       // Embed images
       const bgImg = await pdfDoc.embedPng(bgBytes);
       const starImg = await pdfDoc.embedPng(starBytes);
+      console.log('Images embedded');
 
       // Draw background image
       const bgDims = bgImg.scale(1);
@@ -111,6 +123,8 @@ export default function CertificateGenerator({
         const isLeft = i < colCount;
         const x = isLeft ? leftX : rightX;
         const y = startY - (isLeft ? i : i - colCount) * lineHeight;
+        
+        // Draw star icon and achievement text
         page.drawImage(starImg, {
           x: x,
           y: y - 4,
@@ -192,6 +206,7 @@ export default function CertificateGenerator({
       });
 
       const pdfBytes = await pdfDoc.save();
+      console.log('PDF generated successfully');
 
       // Create a blob and download
       const blob = new Blob([pdfBytes], { type: 'application/pdf' });
@@ -205,7 +220,17 @@ export default function CertificateGenerator({
       URL.revokeObjectURL(url);
     } catch (error) {
       console.error('Error generating PDF:', error);
-      alert('Failed to generate PDF. Please try again.');
+      
+      // Provide more specific error messages
+      if (error instanceof TypeError && error.message.includes('fetch')) {
+        alert('Failed to load certificate images. Please check your internet connection and try again.');
+      } else if (error instanceof Error && error.message.includes('embedFont')) {
+        alert('Failed to load fonts. Please try again.');
+      } else if (error instanceof Error && error.message.includes('embedPng')) {
+        alert('Failed to load certificate images. Please try again.');
+      } else {
+        alert('Failed to generate PDF. Please try again.');
+      }
     } finally {
       setIsGenerating(false);
     }
