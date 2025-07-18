@@ -4,21 +4,21 @@ import { useState } from 'react';
 import CertificateGenerator from '@/components/CertificateGenerator';
 
 const defaultAchievements = [
-  '🌊 You can go under water',
-  '🏊‍♀️ You can float on your back',
-  '🛟 You can be safe in the water',
-  '🏊‍♂️ You can swim to the edge of the pool',
-  '🏊‍♀️ You can swim freestyle',
-  '💨 You can swim freestyle with proper breathing',
-  '🐸 You can swim breaststroke',
-  '🔄 You can swim backstroke',
-  '🦋 You can swim butterfly',
-  '🏊‍♂️ You can dive into a pool safely',
-  '💨 You can take a quick breath',
-  '🛟 You can float on your back for safety breaths',
-  '🥞 You can flip like a pancake',
-  '🫁 You can control your breathing',
-  '🦵 You can kick your feet',
+  'You can go under water',
+  'You can float on your back',
+  'You can be safe in the water',
+  'You can swim to the edge of the pool',
+  'You can swim freestyle',
+  'You can swim freestyle with proper breathing',
+  'You can swim breaststroke',
+  'You can swim backstroke',
+  'You can swim butterfly',
+  'You can dive into a pool safely',
+  'You can take a quick breath',
+  'You can float on your back for safety breaths',
+  'You can flip like a pancake',
+  'You can control your breathing',
+  'You can kick your feet',
 ];
 
 export default function CertificateAdmin() {

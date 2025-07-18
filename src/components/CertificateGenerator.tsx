@@ -124,64 +124,20 @@ export default function CertificateGenerator({
         const x = isLeft ? leftX : rightX;
         const y = startY - (isLeft ? i : i - colCount) * lineHeight;
         
-        // Handle text with emojis by splitting and drawing separately
-        const achievement = achievements[i];
-        const emojiMatch = achievement.match(/^([^\u0000-\u007F]+)\s*(.*)$/);
-        
-        try {
-          if (emojiMatch) {
-            const [, emoji, text] = emojiMatch;
-            
-            // Draw emoji as a colored circle with text
-            const emojiSize = 16;
-            page.drawCircle({
-              x: x + 30,
-              y: y + emojiSize/2,
-              size: emojiSize,
-              color: rgb(0.2, 0.6, 1.0),
-            });
-            
-            // Draw the text part
-            page.drawText(text, {
-              x: x + 50,
-              y: y,
-              size: 15,
-              font,
-              color: rgb(0.15, 0.15, 0.15),
-            });
-          } else {
-            // No emoji, draw normally
-            page.drawImage(starImg, {
-              x: x,
-              y: y - 4,
-              width: 22,
-              height: 22,
-            });
-            page.drawText(achievement, {
-              x: x + 30,
-              y: y,
-              size: 15,
-              font,
-              color: rgb(0.15, 0.15, 0.15),
-            });
-          }
-        } catch (drawError) {
-          console.warn('Error drawing achievement:', drawError);
-          // Fallback: just draw the text without emoji handling
-          page.drawImage(starImg, {
-            x: x,
-            y: y - 4,
-            width: 22,
-            height: 22,
-          });
-          page.drawText(achievement, {
-            x: x + 30,
-            y: y,
-            size: 15,
-            font,
-            color: rgb(0.15, 0.15, 0.15),
-          });
-        }
+        // Draw star icon and achievement text
+        page.drawImage(starImg, {
+          x: x,
+          y: y - 4,
+          width: 22,
+          height: 22,
+        });
+        page.drawText(achievements[i], {
+          x: x + 30,
+          y: y,
+          size: 15,
+          font,
+          color: rgb(0.15, 0.15, 0.15),
+        });
       }
 
       // Notes box
