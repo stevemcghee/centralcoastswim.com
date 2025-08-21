@@ -3,11 +3,17 @@
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 
-const PdfButton = ({ target, fileName }) => {
+type PdfButtonProps = {
+  target: string;
+  fileName: string;
+};
+
+const PdfButton: React.FC<PdfButtonProps> = ({ target, fileName }) => {
   const handleClick = async () => {
     const element = document.querySelector(target);
     if (element) {
-      const canvas = await html2canvas(element, { scale: 2 });
+      await new Promise(resolve => setTimeout(resolve, 500)); // Add a small delay
+      const canvas = await html2canvas(element as HTMLElement, { scale: 2, useCORS: true, allowTaint: true });
       const imgData = canvas.toDataURL('image/png');
 
       const pdf = new jsPDF({

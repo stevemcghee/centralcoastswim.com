@@ -7,7 +7,19 @@ import React from 'react';
 const Poster = () => {
   return (
     <div className="relative w-[16.5in] h-[11.7in] bg-white border border-black">
-      <h1 className="absolute bottom-16 left-0 right-0 text-center z-10 text-2xl font-bold text-black bg-transparent">Swim lessons for all ages</h1>
+      <div className="absolute bottom-8 left-[316px] right-[316px] z-10 flex flex-row justify-around items-center">
+        <p className="text-xl text-[#179BCE]">centralcoastswim.com</p>
+        <h1 className="text-xl font-bold text-[#0C5C94] bg-transparent">Swim lessons for all ages</h1>
+        <div className="flex items-center">
+          <Image
+            src="/images/instagram.svg"
+            alt="Instagram Logo"
+            width={30}
+            height={30}
+          />
+          <p className="text-xl ml-2 text-[#F38415]">@centralcoastswim</p>
+        </div>
+      </div>
       <div className="absolute inset-0 flex items-center justify-center transform -translate-y-[168px]">
         <Image
           src="/images/logo-white.jpg"
@@ -30,19 +42,10 @@ const Poster = () => {
         <Image
           src="/images/qrcode_centralcoastswim.com.png"
           alt="QR Code"
-          width={200}
-          height={200}
+          width={300}
+          height={300}
         />
-        <p className="text-xl">centralcoastswim.com</p>
-        <div className="flex items-center">
-          <Image
-            src="/images/instagram.svg"
-            alt="Instagram Logo"
-            width={30}
-            height={30}
-          />
-          <p className="text-xl ml-2 text-orange-800">@centralcoastswim</p>
-        </div>
+        
       </div>
     </div>
   );
