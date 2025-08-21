@@ -9,7 +9,7 @@ import Link from 'next/link';
 // developer tools. This should only be used for non-sensitive content on a low-risk site.
 //
 // Replace 'your_password_here' with your desired password.
-const ADMIN_PASSWORD = 'your_password_here';
+const ADMIN_PASSWORD = 'charlie';
 
 export default function AdminPage() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
