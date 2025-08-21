@@ -3,7 +3,12 @@
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 
-const PdfButton = ({ target, fileName }) => {
+type PdfButtonProps = {
+  target: string;
+  fileName: string;
+};
+
+const PdfButton: React.FC<PdfButtonProps> = ({ target, fileName }) => {
   const handleClick = async () => {
     const element = document.querySelector(target);
     if (element) {
