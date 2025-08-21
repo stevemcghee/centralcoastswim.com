@@ -1,48 +1,29 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 import Link from 'next/link';
+
+// !!! WARNING: INSECURE METHOD !!!
+// This method of password protection is not secure. The password is stored in plain text
+// in the client-side code, which can be easily accessed by anyone with access to the browser's
+// developer tools. This should only be used for non-sensitive content on a low-risk site.
+//
+// Replace 'your_password_here' with your desired password.
+const ADMIN_PASSWORD = 'your_password_here';
 
 export default function AdminPage() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const router = useRouter();
 
-  useEffect(() => {
-    // Check if already authenticated
-    const auth = sessionStorage.getItem('adminAuth');
-    if (auth === 'true') {
-      setIsAuthenticated(true);
-    }
-  }, []);
-
-  const handleLogin = async (e: React.FormEvent) => {
+  const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    setError(''); // Clear any previous errors
-    
-    try {
-      const response = await fetch('/api/auth/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ password }),
-      });
-      
-      if (response.ok) {
-        sessionStorage.setItem('adminAuth', 'true');
-        setIsAuthenticated(true);
-      } else {
-        const data = await response.json();
-        setError(data.error || 'Authentication failed. Please try again.');
-        setPassword(''); // Clear the password field
-      }
-    } catch (error) {
-      console.error('Login error:', error);
-      setError('Network error. Please try again.');
-      setPassword(''); // Clear the password field
+    if (password === ADMIN_PASSWORD) {
+      setIsAuthenticated(true);
+      setError('');
+    } else {
+      setError('Invalid password');
+      setPassword('');
     }
   };
 
@@ -86,10 +67,7 @@ export default function AdminPage() {
         <div className="flex justify-between items-center mb-8">
           <h1 className="text-3xl font-bold text-gray-900">Admin Tools</h1>
           <button
-            onClick={() => {
-              sessionStorage.removeItem('adminAuth');
-              setIsAuthenticated(false);
-            }}
+            onClick={() => setIsAuthenticated(false)}
             className="text-sm text-gray-600 hover:text-gray-800 transition-colors duration-200"
           >
             Logout
@@ -133,4 +111,4 @@ export default function AdminPage() {
       </div>
     </div>
   );
-} 
+}
