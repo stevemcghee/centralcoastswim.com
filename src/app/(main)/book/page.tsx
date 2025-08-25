@@ -11,56 +11,27 @@ export default function Book() {
             <h2 className="text-2xl font-semibold mb-4">Available Sessions</h2>
             <div className="bg-blue-50 p-4 rounded-lg mb-6">
               <ul className="list-none text-gray-700">
-                <li className="line-through">
+                <li className="mt-2">
                   <div className="flex items-center">
-                    <span className="font-semibold mr-2">Session 1:</span>
+                    <span className="font-semibold mr-2">Session 7:</span>
                   </div>
                   <div className="ml-20">
-                    <div>May 19, 20, 21, 22</div>
-                    <div>May 26, 27, 28, 29</div>
-                  </div>
-                </li>
-                <li className="line-through mt-2">
-                  <div className="flex items-center">
-                    <span className="font-semibold mr-2">Session 2:</span>
-                  </div>
-                  <div className="ml-20">
-                    <div>June 2, 3, 4, 5</div>
-                    <div>June 9, 10, 11, 12</div>
-                  </div>
-                </li>
-                <li className="line-through mt-2">
-                  <div className="flex items-center">
-                    <span className="font-semibold mr-2">Session 3:</span>
-                  </div>
-                  <div className="ml-20">
-                    <div>June 16, 17, 18, 19</div>
-                    <div>June 23, 24, 25, 26</div>
+                    <div>August 25, 26, 27, 28</div>
+                    <div>September 1, 2, 3, 4</div>
                   </div>
                 </li>
                 <li className="mt-2">
                   <div className="flex items-center">
-                    <span className="font-semibold mr-2">Session 4:</span>
+                    <span className="font-semibold mr-2">Session 8:</span>
                   </div>
                   <div className="ml-20">
-                    <div>July 7, 8, 9, 10</div>
-                    <div>July 14, 15, 16, 17</div>
-                  </div>
-                </li>
-                <li className="mt-2">
-                  <div className="flex items-center">
-                    <span className="font-semibold mr-2">Funky Session 5:</span>
-                  </div>
-                  <div className="ml-20">
-                    <div>July 21, 22, 23, 24, 25, 26</div>
-                    <div>Monday through Saturday</div>
+                    <div>September 8, 9, 10, 11</div>
+                    <div>September 15, 16, 17, 18</div>
                   </div>
                 </li>
               </ul>
               <p className="text-gray-700 mt-3 italic">
-                All Sessions (except for Funky Session 5) are 8 days: Monday - Thursday, at the same time every day, for 2 weeks.
-                <br/>
-                Funky Session 5 will run Monday through Saturday for 6 days.
+                All Sessions are 8 days: Monday - Thursday, at the same time every day, for 2 weeks.
                 <br/>
                 There are 3 spots available for each session.
                 <br/>
