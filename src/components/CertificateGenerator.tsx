@@ -209,7 +209,7 @@ export default function CertificateGenerator({
       console.log('PDF generated successfully');
 
       // Create a blob and download
-      const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+      const blob = new Blob([pdfBytes as Uint8Array<ArrayBuffer>], { type: 'application/pdf' });
       const url = URL.createObjectURL(blob);
       const link = document.createElement('a');
       link.href = url;
