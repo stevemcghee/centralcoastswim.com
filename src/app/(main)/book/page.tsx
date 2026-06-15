@@ -34,7 +34,7 @@ export default function Book() {
             <h2 className="text-2xl font-semibold mb-4">Schedule</h2>
             <div className="w-full h-[600px]">
               <iframe
-                src="https://calendar.google.com/calendar/embed?src=89440ef93c030fce64e18c624102a9c021903642d132489881b7c42662ed97d2%40group.calendar.google.com&ctz=America%2FLos_Angeles"
+                src="https://calendar.google.com/calendar/embed?src=89440ef93c030fce64e18c624102a9c021903642d132489881b7c42662ed97d2%40group.calendar.google.com&ctz=America%2FLos_Angeles&mode=AGENDA"
                 style={{ border: 0 }}
                 width="100%"
                 height="100%"
