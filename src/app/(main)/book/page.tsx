@@ -4,7 +4,7 @@ export default function Book() {
   return (
     <div className="max-w-4xl mx-auto">
       <h1 className="text-4xl font-bold mb-8">Book a Lesson</h1>
-      
+
       <div className="prose prose-lg max-w-none">
         <div className="bg-white p-6 rounded-lg shadow-sm mb-8">
           <div className="mb-8">
@@ -12,7 +12,7 @@ export default function Book() {
             <p className="text-gray-600 mb-6">
               To book a swim lesson or inquire about availability, please contact Andria directly.
             </p>
-            
+
             <div className="bg-blue-50 p-6 rounded-lg">
               <h3 className="text-xl font-semibold mb-4">How to Book</h3>
               <ol className="list-decimal pl-6 space-y-4 text-gray-700">
@@ -27,6 +27,23 @@ export default function Book() {
                 </li>
                 <li>Andria will get back to you to confirm your booking and provide any additional details.</li>
               </ol>
+            </div>
+          </div>
+
+          <div>
+            <h2 className="text-2xl font-semibold mb-4">Check Availability</h2>
+            <p className="text-gray-600 mb-4">
+              Browse available time slots and request a booking below.
+            </p>
+            <div className="w-full h-[600px]">
+              <iframe
+                src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ30_eM7WHSgwJaE27N-nvqe897igBEFDcARk-Npl-A3Og1vPzqxU7JDYx4kFStYlXXap2SBE5Yg?gv=true"
+                style={{ border: 0 }}
+                width="100%"
+                height="100%"
+                frameBorder="0"
+                title="Booking Calendar"
+              />
             </div>
           </div>
         </div>
