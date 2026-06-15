@@ -31,18 +31,16 @@ export default function Book() {
           </div>
 
           <div>
-            <h2 className="text-2xl font-semibold mb-4">Check Availability</h2>
-            <p className="text-gray-600 mb-4">
-              Browse available time slots and request a booking below.
-            </p>
+            <h2 className="text-2xl font-semibold mb-4">Schedule</h2>
             <div className="w-full h-[600px]">
               <iframe
-                src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ30_eM7WHSgwJaE27N-nvqe897igBEFDcARk-Npl-A3Og1vPzqxU7JDYx4kFStYlXXap2SBE5Yg?gv=true"
+                src="https://calendar.google.com/calendar/embed?src=89440ef93c030fce64e18c624102a9c021903642d132489881b7c42662ed97d2%40group.calendar.google.com&ctz=America%2FLos_Angeles"
                 style={{ border: 0 }}
                 width="100%"
                 height="100%"
                 frameBorder="0"
-                title="Booking Calendar"
+                scrolling="no"
+                title="Swim Schedule"
               />
             </div>
           </div>
