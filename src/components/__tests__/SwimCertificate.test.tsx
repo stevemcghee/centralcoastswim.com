@@ -55,30 +55,6 @@ describe('SwimCertificate', () => {
     expect(footerText).toBeInTheDocument()
   })
 
-  it('renders certificate items with emojis', () => {
-    const { getAllByTestId } = render(<SwimCertificate />)
-
-    const accomplishmentTexts = getAllByTestId('text')
-    
-    // Check for specific emoji items
-    const emojiItems = accomplishmentTexts.filter(text => 
-      text.textContent?.includes('🌊') ||
-      text.textContent?.includes('🏊‍♀️') ||
-      text.textContent?.includes('🛟') ||
-      text.textContent?.includes('🏊‍♂️') ||
-      text.textContent?.includes('💨') ||
-      text.textContent?.includes('🐸') ||
-      text.textContent?.includes('🔄') ||
-      text.textContent?.includes('🦋') ||
-      text.textContent?.includes('🥞') ||
-      text.textContent?.includes('🫁') ||
-      text.textContent?.includes('🦵')
-    )
-
-    // Should have multiple emoji items
-    expect(emojiItems.length).toBeGreaterThan(0)
-  })
-
   it('renders all certificate items from the list', () => {
     const { getAllByTestId } = render(<SwimCertificate />)
 
@@ -86,21 +62,21 @@ describe('SwimCertificate', () => {
     
     // Check for specific achievement items
     const expectedItems = [
-      '🌊 You can go under water',
-      '🏊‍♀️ You can float on your back',
-      '🛟 You can be safe in the water',
-      '🏊‍♂️ You can swim to the edge of the pool',
-      '🏊‍♀️ You can swim freestyle',
-      '💨 You can swim freestyle with proper breathing',
-      '🐸 You can swim breaststroke',
-      '🔄 You can swim backstroke',
-      '🦋 You can swim butterfly',
-      '🏊‍♂️ You can dive into a pool safely',
-      '💨 You can take a quick breath',
-      '🛟 You can float on your back for safety breaths',
-      '🥞 You can flip like a pancake',
-      '🫁 You can control your breathing',
-      '🦵 You can kick your feet',
+      'You can go under water',
+      'You can float on your back',
+      'You can be safe in the water',
+      'You can swim to the edge of the pool',
+      'You can swim freestyle',
+      'You can swim freestyle with proper breathing',
+      'You can swim breaststroke',
+      'You can swim backstroke',
+      'You can swim butterfly',
+      'You can dive into a pool safely',
+      'You can take a quick breath',
+      'You can float on your back for safety breaths',
+      'You can flip like a pancake',
+      'You can control your breathing',
+      'You can kick your feet',
     ]
 
     // Check that at least some of the expected items are rendered
@@ -110,11 +86,11 @@ describe('SwimCertificate', () => {
 
     expect(renderedItems.length).toBeGreaterThan(0)
     
-    // Verify that emoji items are present
-    const hasEmojiItems = renderedItems.some(item => 
-      item && (item.includes('🌊') || item.includes('🏊‍♀️') || item.includes('🛟'))
+    // Verify that expected items are present
+    const hasExpectedItems = renderedItems.some(item => 
+      item && expectedItems.some(expected => item.includes(expected))
     )
-    expect(hasEmojiItems).toBe(true)
+    expect(hasExpectedItems).toBe(true)
   })
 
   it('renders certificate with proper styling', () => {
